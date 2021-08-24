@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
-import subprocess
 
-setup(name='ircam_www_theme',
+setup(
+    name='ircam_www_theme',
     version='2.0',
     description='IRCAM theme for the Mezzo CMS',
     long_description='IRCAM theme for the Mezzo CMS',
@@ -11,7 +11,7 @@ setup(name='ircam_www_theme',
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
-    classifiers = [
+    classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Django",

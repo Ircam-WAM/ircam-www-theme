@@ -1,0 +1,23 @@
+{
+  "name": "ircam-www-theme",
+  "description": "mezzo",
+  "version": "1.0.0",
+  "author": {
+    "name": "Bunker Palace",
+    "email": "devs@bunkerpalace.com"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "dependencies": {
+    "compass-mixins": "^0.12.10",
+    "fontawesome": "^4.7.2",
+    "imagesloaded": "^4.1.1",
+    "lightgallery": "^1.10.0",
+    "lightslider": "^1.1.6",
+    "pushy": "^1.0.0",
+    "sticky-kit": "^1.1.2",
+    "video.js": "^5.12.5",
+    "videojs-playlist": "^2.4.0",
+    "waypoints": "^4.0.1"
+  }
+}
