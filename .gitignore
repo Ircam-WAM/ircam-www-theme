@@ -1,6 +1,6 @@
-css
-img
-js
-vendors
+static/css
+static/img
+static/js
+static/vendors
 __pycache__
 node_modules
