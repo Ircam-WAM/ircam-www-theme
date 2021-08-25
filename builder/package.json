@@ -1,0 +1,31 @@
+{
+  "name": "WWW_STMS",
+  "description": "Ircam WWW and STMS websites",
+  "version": "6.0.0",
+  "author": {
+    "name": "Ircam",
+    "email": "pow@ircam.fr"
+  },
+  "type": "module",
+  "scripts": {
+    "gen:favicons": "babel-node generate_favicons.js",
+    "min:img": "babel-node minify_images.js",
+    "process:sass": "babel-node process_sass.js",
+    "watch": "babel-node build.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "autoprefixer": "^10.3.1",
+    "chokidar": "^3.5.2",
+    "cssnano": "^5.0.8",
+    "favicons": "^6.2.2",
+    "imagemin": "^8.0.1",
+    "node-sass-magic-importer": "^5.3.2",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.38.0",
+    "uglify-js": "^3.14.1"
+  }
+}

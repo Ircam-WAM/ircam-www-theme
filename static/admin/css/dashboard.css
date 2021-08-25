@@ -1,0 +1,25 @@
+.dashboard #content {
+    width: 100%;
+}
+
+.dashboard #content-related {
+    width: 78em;
+    float: left;
+}
+
+.dashboard #content-main {
+    float: left;
+    min-width: 21%;
+}
+
+.fa-pencil {
+    color: blue;
+}
+
+.fa-remove {
+    color: red;
+}
+
+.fa-edit {
+    color: green;
+}

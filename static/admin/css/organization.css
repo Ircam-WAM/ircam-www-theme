@@ -1,0 +1,34 @@
+/* Custom admin styles for mezzanine-organization */
+
+#tree {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.yellow_button {
+    display: inline-block;
+    padding: 20px;
+    background: yellow;
+}
+
+.select2-container {
+    min-width: 70em;
+}
+
+.auth-group .selector-available,
+.auth-group .selector-chosen {
+    width: 500px;
+}
+
+.auth-group .selector select[multiple="multiple"] {
+    width: 500px;
+    height: 700px;
+}
+
+.auth-group .selector .selector-chosen select[multiple="multiple"] {
+    height: 732px;
+}
+
+.auth-group .selector {
+    width: auto;
+}

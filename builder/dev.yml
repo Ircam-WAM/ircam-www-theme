@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+    builder:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - ./process_sass.js:/srv/app/process_sass.js
+            - ./generate_favicons.js:/srv/app/generate_favicons.js
+            - ./build.sh:/srv/app/build.sh
+            - ./minify_images.js:/srv/app/minify_images.js
+            - ./package.json:/srv/app/package.json
+            - ..:/srv/app/ircam_www_theme

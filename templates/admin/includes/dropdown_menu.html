@@ -29,16 +29,23 @@
 {% endif %}
 
 {% if dropdown_menu_sites and dropdown_menu_sites|length > 1 %}
-<form action="{% url "set_site" %}">
-<input type="hidden" name="next" value="{{ request.path }}">
-<select name="site_id" onchange="this.form.submit();">
-{% for site in dropdown_menu_sites %}
-<option value="{{ site.id }}"
-    {% if site.id == dropdown_menu_selected_site_id %} selected{% endif %}
-    >{{ site }}</option>
-{% endfor %}
-</select>
+<form action="{% url 'set_site' %}">
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <select name="site_id">
+        {% for site in dropdown_menu_sites %}
+        <option value="{{ site.domain }}"
+            {% if site.id == dropdown_menu_selected_site_id %} selected{% endif %}
+            >{{ site }}</option>
+        {% endfor %}
+    </select>
 </form>
+<script>
+    document.querySelector("select[name='site_id']").onchange = function(e){
+        window.location.replace(
+            window.location.protocol + "//" + e.target.value + window.location.pathname
+        );
+    }
+</script>
 {% endif %}
 </div>
 <div id="side-panel-toggle"></div>
