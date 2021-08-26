@@ -1,4 +1,4 @@
-{% load i18n pages_tags mezzanine_tags staticfiles keyword_tags event_tags organization_tags %}
+{% load i18n pages_tags mezzanine_tags static keyword_tags event_tags organization_tags %}
 {% if settings.USE_MODELTRANSLATION and languages|length > 1 %}
     {% nevercache %}
         {% include "includes/language_selector.html" %}
