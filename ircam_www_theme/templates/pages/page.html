@@ -63,13 +63,6 @@
                     {% block page_content %}
                         {{ page.content }}
                     {% endblock %}
-                    {% block page_link %}
-                        {% with object.links.all as links %}
-                            {% if links %}
-                                {% include 'core/inc/link.html' %}
-                            {% endif %}
-                        {% endwith %}
-                    {% endblock %}
                     {% block page_file %}
                         {% with object.files.all as files %}
                             {% if files %}
@@ -82,6 +75,20 @@
             </div>
 
         </div>
+
+        {% block page_link %}
+        <div class="container">
+            <div class="row">
+                <div class="mb2 col-sm-9 col-sm-push-3 col-lg-9 col-lg-push-2 col-lg-9 white-bg page__content" data-summary-content>
+                {% with object.links.all as links %}
+                    {% if links %}
+                        {% include 'core/inc/link.html' %}
+                    {% endif %}
+                {% endwith %}
+                </div>
+            </div>
+        </div>
+        {% endblock %}
 
         {% block page_slider %}
         {% with object.images.all|get_type:'page_slider' as slider_images %}
@@ -103,75 +110,67 @@
             {% endfor %}
         {% endblock %}
 
-        <div class="white-bg">
+        {% block page_person_list %}
+        {% endblock %}
 
-            {% block page_person_list %}
-            {% endblock %}
+        {% block page_demo %}
+        {% endblock %}
 
-            {% block page_demo %}
-            {% endblock %}
+        {% block page_blog %}
+        {% endblock %}
 
-            {% block page_blog %}
-            {% endblock %}
+        {% block page_sub_content %}
+            {% with object.blocks.all as blocks %}
+                {% include "core/inc/block.html" %}
+            {% endwith %}
+        {% endblock %}
 
-            {% block page_sub_content %}
-                {% with object.blocks.all as blocks %}
-                    {% include "core/inc/block.html" %}
-                {% endwith %}
-            {% endblock %}
+        {% block related_project %}
+        {% endblock %}
 
-            {% block related_project %}
-            {% endblock %}
+        {% block products %}
+            {% if page.product_lists.all|length > 0 %}
+                {% for page_product_list in page.product_lists.all %}
+                  {% with page_product_list.list as list %}
+                    {% with "shop/includes/product_list_"|add:list.style|add:"_style.html" as template %}
+                      {% include template %}
+                    {% endwith %}
+                  {% endwith %}
+                {% endfor %}
+            {% endif %}
+        {% endblock %}
 
-            {% block products %}
-                {% if page.product_lists.all|length > 0 %}
-                    {% for page_product_list in page.product_lists.all %}
-                      {% with page_product_list.list as list %}
-                        {% with "shop/includes/product_list_"|add:list.style|add:"_style.html" as template %}
-                          {% include template %}
-                        {% endwith %}
-                      {% endwith %}
-                    {% endfor %}
-                {% endif %}
-            {% endblock %}
+        {% block page_sub_content_2 %}
+        {% endblock %}
 
-            {% block page_sub_content_2 %}
-            {% endblock %}
+        {% block page_person_list_team %}
+        {% endblock %}
 
-            {% block page_person_list_team %}
-            {% endblock %}
+        {% block page_sub_content_3 %}
+        {% endblock %}
 
-            {% block page_sub_content_3 %}
-            {% endblock %}
+        {% block page_hal %}
+        {% endblock %}
 
-            {% block page_hal %}
-            {% endblock %}
-
-            {% block logo %}
-                {% with page.images.all|get_type:'logo' as images %}
-                    {% if images %}
-                        <div class="page__block{% if block.background_color %} page__block--{{ block.background_color }}{% endif %}">
-                            <div class="white-bg pb2">
-                                <div class="container">
-                                    <div class="row" data-summary-content>
-                                        <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
-                                            <ul class="partners-list">
-                                                {% include 'core/inc/logo.html' %}
-                                            </ul>
-                                        </div>
+        {% block logo %}
+            {% with page.images.all|get_type:'logo' as images %}
+                {% if images %}
+                    <div class="page__block{% if block.background_color %} page__block--{{ block.background_color }}{% endif %}">
+                        <div class="white-bg pb2">
+                            <div class="container">
+                                <div class="row" data-summary-content>
+                                    <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
+                                        <ul class="partners-list">
+                                            {% include 'core/inc/logo.html' %}
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endwith %}
-            {% endblock %}
-
-        </div>
-
-    </div>
-
-    <div class="white-bg">
+                    </div>
+                {% endif %}
+            {% endwith %}
+        {% endblock %}
 
         {% block page_related_content %}
             {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
