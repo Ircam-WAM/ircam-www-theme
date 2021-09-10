@@ -72,11 +72,9 @@
     {% endblock %}
 
     {% block page_link %}
-        <div style="order:{{ page.custompage.block_order|slice:":1" }};">
-          {% with page.custompage as object %}
-              {{ block.super }}
-          {% endwith %}
-        </div>
+      {% with page.custompage as object %}
+          {{ block.super }}
+      {% endwith %}
     {% endblock %}
 
     {% block page_slider %}
