@@ -50,9 +50,11 @@
         {% endif %}
 
         {% if page.custompage.content %}
-         {% editable page.custompage.content %}
-            {{ page.custompage.content|richtext_filters|safe }}
-         {% endeditable %}
+            {% if page.custompage.content %}
+                {% editable page.custompage.content %}
+                    {{ page.custompage.content|richtext_filters|safe }}
+                {% endeditable %}
+            {% endif %}
         {% endif %}
 
         {% if page.get_ascendants|length == 1 %}
@@ -79,7 +81,10 @@
     {% endblock %}
 
     {% block page_slider %}
-        <div style="order:{{ page.custompage.block_order|slice:"2:3" }};">
+        <div style="order:{{ page.custompage.block_order|slice:"0:1" }};">
+            {% if slider_images and page.custompage.separator|slice:"0:1" == '1' %}
+                <hr class="mt0 mb0" />
+            {% endif %}
             {% with page.custompage as object %}
                 {{ block.super }}
             {% endwith %}
@@ -87,7 +92,10 @@
     {% endblock %}
 
     {% block multimedia %}
-        <div style="order:{{ page.custompage.block_order|slice:"4:5" }};">
+        <div style="order:{{ page.custompage.block_order|slice:"2:3" }};">
+          {% if page.custompage.medias.all and page.custompage.separator|slice:"2:3" == '1' %}
+              <hr class="mt0 mb0" />
+          {% endif %}
           {% with page.custompage as object %}
               {{ block.super }}
           {% endwith %}
@@ -95,11 +103,11 @@
     {% endblock %}
 
     {% block page_person_list %}
-        <div style="order:{{ page.custompage.block_order|slice:"6:7" }};">
+        <div style="order:{{ page.custompage.block_order|slice:"4:5" }};">
 
             {% for page_custom_person_list_block_inline in page.custompage.page_custom_person_list_block_inlines.all  %}
                 {% with page_custom_person_list_block_inline.person_list_block as person_list_block %}
-                    {% with "network/person/includes/list_"|add:person_list_block.style|add:"_style.html" as template %}
+                    {% with template="network/person/includes/list_"|add:person_list_block.style|add:"_style.html" separator_before=page.custompage.separator|slice:"4:5"%}
                         {% include template %}
                     {% endwith %}
                 {% endwith %}
@@ -109,22 +117,31 @@
     {% endblock %}
 
     {% block page_sub_content %}
-        <div style="order:{{ page.custompage.block_order|slice:"8:9" }};">
-           {% with page.custompage.blocks.all as blocks %}
-             {% include "core/inc/block.html" %}
-          {% endwith %}
+        <div style="order:{{ page.custompage.block_order|slice:"6:7" }};">
+
+            {% with page.custompage.blocks.all as blocks %}
+                {% if blocks and page.custompage.separator|slice:"6:7" == '1'%}
+                    <hr class="mt0 mb0" />
+                {% endif %}
+                {% include "core/inc/block.html" %}
+            {% endwith %}
         </div>
     {% endblock %}
 
     {% block products %}
-        <div style="order:{{ page.custompage.block_order|slice:"10:11" }};">
-            {{ block.super }}
+        <div style="order:{{ page.custompage.block_order|slice:"8:9" }};">
+            {% with separator_before=page.custompage.separator|slice:"8:9" separator_after=False %}
+                {{ block.super }}
+            {% endwith %}
         </div>
     {% endblock %}
 
     {% block page_related_content %}
-        <div style="order:{{ page.custompage.block_order|slice:"12:13" }};">
-            {{ block.super }}
+        <div style="order:{{ page.custompage.block_order|slice:"10:11" }};">
+            {% if page.dynamic_content_pages.all|get_content_objects and page.custompage.separator|slice:"10:11" == '1' %}
+                <hr class="mt0 mb0" />
+            {% endif %}
+            {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
         </div>
     {% endblock %}
 

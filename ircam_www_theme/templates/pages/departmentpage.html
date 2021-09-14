@@ -45,12 +45,18 @@
 
 {% block page_sub_content %}
     {% with page.blocks.all as blocks %}
-      {% include "core/inc/block.html" %}
+        {% if blocks and blocks.first %}
+            <hr class="mt0" />
+        {% endif %}
+        {% include "core/inc/block.html" %}
     {% endwith %}
 {% endblock %}
 
 {% block page_related_content %}
     {% with page.departmentpage.department|get_article_by_department as concrete_objects %}
-        {% include "core/inc/related_content_dynamic.html" %}
+        {% if concrete_objects %}
+            <hr class="mt0 mb0" />
+            {% include "core/inc/related_content_dynamic.html" %}
+        {% endif %}
     {% endwith %}
 {% endblock %}

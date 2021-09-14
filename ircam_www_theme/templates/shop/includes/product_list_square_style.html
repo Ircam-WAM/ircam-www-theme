@@ -1,6 +1,9 @@
 {% load organization_tags mezzanine_tags %}
 {% if list %}
     <div class="white-bg pb2">
+        {% if separator_before == "1" or separator_before == True or separator_before == None %}
+            <hr class="mt0" />
+        {% endif %}
         <div class="container">
             <div class="row">
                 <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2" data-summary-content>
@@ -51,6 +54,8 @@
                 </div>
             </div>
         </div>
-        <hr class="mt0" />
+        {% if separator_after == True or separator_after == '1' or separator_after == None %}
+            <hr class="mt0" />
+        {% endif %}
     </div>
 {% endif %}

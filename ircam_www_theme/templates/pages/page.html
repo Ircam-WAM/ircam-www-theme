@@ -24,29 +24,9 @@
 {% block main %}
 
     <div class="page page--{% spaceless %}{% block page_class %}{% endblock %}{% endspaceless %}">
+        
         <div class="container">
-
             <div class="row">
-
-                <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
-                    {% block page_tags %}
-                    {% endblock %}
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-sm-9 col-sm-push-3 col-lg-9 col-lg-push-2 white-bg">
-                    {% block page_title %}
-                        {{ page.title }}
-                    {% endblock %}
-                </div>
-
-            </div>
-
-            <div class="row">
-
                 <div class="col-sm-3 col-lg-2 page__sidebar">
                     <div style="position: relative;">
                         {% block page_sidebar %}
@@ -59,25 +39,54 @@
                         {% endblock %}
                     </div>
                 </div>
-                <div class="mb2 col-sm-9 col-lg-9 white-bg page__content" data-summary-content>
-                    {% block page_content %}
-                        {{ page.content }}
-                    {% endblock %}
-                    {% block page_link %}
-                        {% with object.links.all as links %}
-                            {% if links %}
-                                {% include 'core/inc/link.html' %}
-                            {% endif %}
-                        {% endwith %}
-                    {% endblock %}
-                    {% block page_file %}
-                        {% with object.files.all as files %}
-                            {% if files %}
-                                {% include 'core/inc/files.html' %}
-                            {% endif %}
-                        {% endwith %}
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
+                    {% block page_tags %}
                     {% endblock %}
                 </div>
+
+            </div>
+
+            <div class="row">
+                {% if page.title %}
+                    <div class="col-sm-9 col-sm-push-3 col-lg-9 col-lg-push-2 white-bg">
+                        {% block page_title %}
+                            {{ page.title }}
+                        {% endblock %}
+                    </div>
+                {% endif %}
+
+            </div>
+
+            <div class="row">
+
+                    <div class="mb2 col-sm-3 col-sm-push-3 col-lg-2 col-lg-push-2 col-sm-9 col-lg-9 white-bg page__content" data-summary-content>
+                        {% block page_content %}
+                            {% if page.content %}
+                                {{ page.content }}
+                            {% endif %}
+                        {% endblock %}
+                        {% block page_link %}
+                            {% with object.links.all as links %}
+                                {% if links %}
+                                    {% include 'core/inc/link.html' %}
+                                {% endif %}
+                            {% endwith %}
+                        {% endblock %}
+                        {% block page_file %}
+                            {% with object.files.all as files %}
+                                {% if files %}
+                                    {% include 'core/inc/files.html' %}
+                                {% endif %}
+                            {% endwith %}
+                        {% endblock %}
+                    </div>
 
             </div>
 
@@ -116,6 +125,9 @@
 
         {% block page_sub_content %}
             {% with object.blocks.all as blocks %}
+                {% if blocks and blocks.first %}
+                    <hr class="mt0" />
+                {% endif %}
                 {% include "core/inc/block.html" %}
             {% endwith %}
         {% endblock %}
