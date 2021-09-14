@@ -1,19 +1,21 @@
 {% load i18n mezzanine_tags keyword_tags organization_tags pages_tags %}
 {% if concrete_objects %}
     <div class="white-bg pb2">
-        <div class="container"
-        {% if nav %}
-            style='width:73%;margin-left:27%'
-        {% endif %}
-        >
+        <div class="container">
             <div class="row tac">
                 <div class="col-xs-12">
                     <h2 class="dashed dashed--center mt2">{% if object.related_title.title %}{{ object.related_title.title }}{% else %}{% trans "Also discover" %}{% endif %}</h2>
                 </div>
             </div>
-            <div class="row tac">
+            <div class="row {% if not nav %}tac{% endif %}">
                 {% for concrete_object in concrete_objects %}
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                    <div class=" 
+                        {% if nav %}
+                            col-sm-push-3 col-lg-push-2 col-sm-3 col-lg-3
+                        {% else %}
+                            col-lg-3 col-md-4 col-sm-4 col-xs-6
+                        {% endif %}"
+                    >
                         {% with app_label=concrete_object|app_label_short classname=concrete_object|classname|lower object=concrete_object  %}
                             {% with app_label|add:"/"|add:classname|add:"/includes/"|add:classname|add:"_card.html" as template %}
                                 {% if template|template_exists %}

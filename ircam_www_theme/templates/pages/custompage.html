@@ -115,7 +115,7 @@
         <div style="order:{{ page.custompage.block_order|slice:"4:5" }};">
 
 
-            {% if page.custompage.separator|slice:"4:5" == "1" %}
+            {% if page.custompage.page_custom_person_list_block_inlines.all and page.custompage.separator|slice:"4:5" == "1" %}
                 <hr class="mt0" />
             {% endif %}
 
