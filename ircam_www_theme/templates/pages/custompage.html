@@ -14,14 +14,7 @@
         {% endwith %}
     {% endblock %}
 
-    {% block page_title %}
-        {% editable page.custompage.title %}
-            <h1 class="dotted">{{ page.custompage.title }}</h1>
-        {% endeditable %}
-    {% endblock %}
-
-    {% block page_content %}
-
+    {% block extra_head %}
         <style>
             
             .page{
@@ -34,6 +27,22 @@
                 width: 100%;
             }
         </style>
+        {{ block.super }}
+    {% endblock %}
+
+    {% block main %}
+        {% with display_content=page.custompage.display_content %}
+            {{ block.super }}
+        {% endwith %}
+    {% endblock %}
+
+    {% block page_title %}
+        {% editable page.custompage.title %}
+            <h1 class="dotted">{{ page.custompage.title }}</h1>
+        {% endeditable %}
+    {% endblock %}
+
+    {% block page_content %}
 
         {% with page.get_ascendants|last as top_level_parent %}
             {% if linked_organization_content and research_slug == top_level_parent.slug %}
@@ -141,7 +150,11 @@
             {% if page.dynamic_content_pages.all|get_content_objects and page.custompage.separator|slice:"10:11" == '1' %}
                 <hr class="mt0 mb0" />
             {% endif %}
-            {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
+            {% if page.custompage.related_title.display_mode == '1' %}
+                {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page nav=True %}
+            {% else %}
+                {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
+            {% endif %}
         </div>
     {% endblock %}
 
