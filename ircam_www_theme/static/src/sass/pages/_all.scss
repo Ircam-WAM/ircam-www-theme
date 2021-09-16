@@ -19,3 +19,35 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 @import "home";
+
+@media screen and (min-width: 972px){
+	.related_content_block{
+		margin-left: 25%;
+	}
+
+	.related_content_block_title{
+		margin-left: 25%;
+		width: 75%;
+	}
+
+	.page__sidebar{
+		height: 0px;
+		top: 168px;
+		position: relative;
+	}
+
+	.page__sidebar_container{
+		height: 0px;
+	}
+}
+
+@media screen and (min-width: 1372px){
+	.related_content_block{
+		margin-left: 15%;
+	}
+
+	.related_content_block_title{
+		margin-left: 15%;
+		width: 85%;
+	}
+}
