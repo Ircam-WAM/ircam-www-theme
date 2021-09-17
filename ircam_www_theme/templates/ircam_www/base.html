@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load i18n pages_tags mezzanine_tags staticfiles keyword_tags event_tags organization_tags hijack_tags %}
+{% load i18n pages_tags mezzanine_tag{ STATIC_URL }}/les keyword_tags event_tags organization_tags hijack_t%}
 {% get_language_info_list for LANGUAGES as languages %}
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -12,31 +12,31 @@
     {% block facebook_meta %}
         {% include 'core/inc/facebook_meta.html' %}
     {% endblock %}
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{% static "img/favicons/apple-touch-icon-152x152-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{% static "img/favicons/apple-touch-icon-120x120-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{% static "img/favicons/apple-touch-icon-76x76-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="{% static "img/favicons/apple-touch-icon-60x60-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "img/favicons/apple-touch-icon-144x144-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "img/favicons/apple-touch-icon-114x114-precomposed.png" %}">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "img/favicons/apple-touch-icon-72x72-precomposed.png" %}">
-	<link rel="apple-touch-icon" sizes="57x57" href="{% static "img/favicons/apple-touch-icon.png" %}">
-	<link rel="shortcut icon" href="{% static "img/favicons/favicon.ico" %}">
-	<link rel="icon" type="image/png" sizes="96x96" href="{% static "img/favicons/favicon-96x96.png" %}">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-152x152-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-120x120-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-76x76-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-60x60-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ STATIC_URL }}/img/favicons/apple-touch-icon.png">
+	<link rel="shortcut icon" href="{{ STATIC_URL }}/img/favicons/favicon.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ STATIC_URL }}/img/favicons/favicon-96x96.png">
 
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900,300italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqF2kIHtUASr67QP-1bXRd6FPELDS4FSs&libraries=geometry"></script>
 
     {% compress css %}
-    <link rel="stylesheet" href="{% static "vendors/font-awesome/css/font-awesome.css" %}">
-    <link rel="stylesheet" href="{% static "vendors/lightslider/dist/css/lightslider.css" %}">
-    <link rel="stylesheet" href="{% static "vendors/lightgallery/dist/css/lightgallery.css" %}">
-    <link rel="stylesheet" href="{% static "vendors/pushy/css/pushy.css" %}">
-    <link rel="stylesheet" href="{% static "vendors/video.js/dist/video-js.css" %}">
-    <link rel="stylesheet" href="{% static "css/index.min.css" %}">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/vendors/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/vendors/lightslider/dist/css/lightslider.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/vendors/lightgallery/dist/css/lightgallery.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/vendors/pushy/css/pushy.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/vendors/video.js/dist/video-js.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}/css/index.min.css?v=5.1.1">
     {% endcompress %}
 
     {% if debug_mode %}
-        <link rel="stylesheet" type="text/css" href="{% static 'hijack/hijack-styles.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/hijack/hijack-styles.css' />
     {% endif %}
 
     {% block extra_head %}{% endblock %}
