@@ -2,8 +2,11 @@
 {% if person_list_block.title %}
 
     <div class="white-bg pb2">
+        
+        {% if index != 0 and separator_before == "1" or separator_before == True or separator_before == None %}
+            <hr class="mt0" />
+        {% endif %}
 
-        <hr class="mt0" />
         <div class="container">
 
             <div class="row">

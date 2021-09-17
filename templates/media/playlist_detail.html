@@ -67,5 +67,8 @@
 {% endblock %}
 
 {% block page_related_content %}
-    {% include "core/inc/related_content_dynamic.html" %}
+    {% if concrete_objects %}
+        <hr class="mt0 mb0" />
+        {% include "core/inc/related_content_dynamic.html" %}
+    {% endif %}
 {% endblock %}

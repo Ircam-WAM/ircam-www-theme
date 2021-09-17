@@ -68,6 +68,9 @@
 
 {% block page_sub_content %}
     {% with page.blocks.all|slice:'1' as blocks %}
+        {% if blocks and blocks.first %}
+            <hr class="mt0" />
+        {% endif %}
         {% include "core/inc/block.html" %}
     {% endwith %}
 {% endblock %}
@@ -113,6 +116,9 @@
 
 {% block page_sub_content_2 %}
     {% with page.blocks.all|slice_ng:'1:-2' as blocks %}
+        {% if blocks and blocks.first %}
+            <hr class="mt0" />
+        {% endif %}
         {% include "core/inc/block.html" %}
     {% endwith %}
 {% endblock %}
@@ -145,6 +151,9 @@
 
 {% block page_sub_content_3 %}
     {% with page.blocks.all|slice_ng:'-1' as blocks %}
+        {% if blocks and blocks.first %}
+            <hr class="mt0" />
+        {% endif %}
         {% include "core/inc/block.html" %}
     {% endwith %}
 {% endblock %}

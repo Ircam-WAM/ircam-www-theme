@@ -1,9 +1,6 @@
 {% load i18n mezzanine_tags keyword_tags pages_tags organization_tags %}
 {% if blocks %}
     <div class="white-bg pb2">
-        {% if blocks.first %}
-        <hr class="mt0" />
-        {% endif %}
         {% for block in blocks %}
             {% if block.content %}
                 {% if not forloop.first and block.with_separator %}
