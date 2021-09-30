@@ -27,7 +27,9 @@ $module: ".lang-switcher";
     margin: 0;
     @include padding-right(.5);
 
-    position: absolute;
+    /* position: absolute; */
+    display: flex;
+
     top: 0;
     right: .25rem;
     z-index: 2;
@@ -41,7 +43,7 @@ $module: ".lang-switcher";
         @include padding(0 .5);
 
         text-transform: uppercase;
-        display: none;
+        /* display: none; */
 
         >a {
             color: white;
@@ -49,8 +51,13 @@ $module: ".lang-switcher";
 
         &.active {
             display: block;
+            text-decoration: underline white;
         }
 
+    }
+
+    &_language_separator{
+        margin-top: 6px;
     }
 
     &.open {
@@ -70,6 +77,7 @@ $module: ".lang-switcher";
 
     }
 
+    /*
     &:after {
         display: block;
         content: '\f107';
@@ -85,6 +93,7 @@ $module: ".lang-switcher";
         @include margin-right(.5);
         @include transition(all 0.2s ease-in-out);
     }
+    */
 
     .sidebar & {
 

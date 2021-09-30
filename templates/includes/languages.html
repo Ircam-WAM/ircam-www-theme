@@ -3,24 +3,16 @@
     {% nevercache %}
         {% include "includes/language_selector.html" %}
     {% endnevercache %}
-    <ul class="lang-switcher" id="langSelector">
+    <p class="lang-switcher" id="langSelector">
         {% for language in languages %}
-            {% if language.code == LANGUAGE_CODE %}
-                <li class="lang-switcher__item active">
-                    <a href="#">
-                      {{ language.code|title }}
-                    </a>
-                </li>
+            <span class="lang-switcher__item {% if language.code == LANGUAGE_CODE %}active{% endif %}">
+                <a {% if language.code != LANGUAGE_CODE %}class="link_active"{% endif %} href="#" data-lang="{{ language.code }}">
+                  {{ language.code|title }}
+                </a>
+            </span>
+            {% if forloop.counter == 1 %}
+                <span class="lang-switcher_language_separator">|</span>
             {% endif %}
         {% endfor %}
-        {% for language in languages %}
-            {% if language.code != LANGUAGE_CODE %}
-                <li class="lang-switcher__item">
-                    <a href="#" data-lang="{{ language.code }}">
-                      {{ language.code|title }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    </p>
 {% endif %}
