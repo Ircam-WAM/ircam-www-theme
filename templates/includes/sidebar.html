@@ -15,25 +15,29 @@
         </li>
     </ul>
 
-    <ul class="lang-switcher" id="langSelectorMobile">
-        {% for language in languages %}
-            {% if language.code == LANGUAGE_CODE %}
-                <li class="lang-switcher__item active">
-                    <a href="#">
-                      {{ language.code|title }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-        {% for language in languages %}
-            {% if language.code != LANGUAGE_CODE %}
-                <li class="lang-switcher__item">
-                    <a href="#" data-lang="{{ language.code }}">
-                      {{ language.code|title }}
-                    </a>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
+    <div class="sidebar__login_language">
+        {% include "includes/login_logout.html" %}
+
+        <ul class="lang-switcher" id="langSelectorMobile">
+            {% for language in languages %}
+                {% if language.code == LANGUAGE_CODE %}
+                    <li class="lang-switcher__item active">
+                        <a href="#">
+                          {{ language.code|title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% for language in languages %}
+                {% if language.code != LANGUAGE_CODE %}
+                    <li class="lang-switcher__item">
+                        <a href="#" data-lang="{{ language.code }}">
+                          {{ language.code|title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
 
 </div>

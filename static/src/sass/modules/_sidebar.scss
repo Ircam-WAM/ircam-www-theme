@@ -60,4 +60,24 @@ $module: ".sidebar";
         @include margin(0 0 .5 0);
     }
 
+    .sidebar__login_language {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        right: 0px;
+    }
+
+    .sidebar__login_language * {
+        top: 15px;
+        position: static;
+    }
+
+    .sidebar__login_language .profil-menu {
+        margin-top: 0px;
+    }
+
+    .sidebar__login_language .profil-menu.open li{
+        background-color: white;
+    }
+
 }
