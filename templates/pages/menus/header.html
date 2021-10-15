@@ -16,7 +16,8 @@
                           {% with host_organization.images|get_type:"logo_header" as images %}
                             {% if images %}
                              {% with images|first as img %}
-                              <img src="{{ MEDIA_URL }}{{ img }}" title="{{ img.title }}" width="180" />
+                              <img src="{{ STATIC_URL }}img/logo_ircam_noir.svg" title="{{ img.title }}" width="180" />
+                              {# by default log url is {{ MEDIA_URL }}{{ img }} #}
                              {% endwith %}
                             {% endif %}
                           {% endwith %}

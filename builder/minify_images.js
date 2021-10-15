@@ -22,7 +22,7 @@ const getAllDirectories = function(dirPath, arrayOfDirectories) {
 
 const dirs = getAllDirectories(root, [root])
 for(let dir in dirs){
-	imagemin([dirs[dir] + ".{jpg,jpeg,png,gif}"], {
+	imagemin([dirs[dir] + ".{jpg,jpeg,png,gif,svg}"], {
 		destination: dirs[dir],
 		progressive: true,
 	    optimizationLevel: 3
