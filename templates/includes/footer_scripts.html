@@ -14,7 +14,7 @@
     <script src="{{ STATIC_URL }}vendor_forks/audiojs/audiojs/audio.js"></script>
     <script src="{{ STATIC_URL }}vendor_forks/jquery_lazyload/jquery.lazyload.js"></script>
     <script src="{{ STATIC_URL }}vendors/waypoints/lib/jquery.waypoints.js"></script>
-    <script src="{{ STATIC_URL }}js/index.min.js?v=1.1"></script>
+    <script src="{{ STATIC_URL }}js/index.min.js?v={{ static_hash }}"></script>
 {% block extra_js %}{% endblock %}
 {% editable_loader %}
 {% endcompress %}

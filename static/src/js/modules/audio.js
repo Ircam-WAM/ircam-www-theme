@@ -46,11 +46,16 @@ Audio.prototype.init = function() {
                 idx = that.audios.indexOf(this);
                 playlist = that.playlists[idx];
 
-                var next = playlist.find('li.playing').next();
-                if (!next.length) next = playlist.find('li').first();
+                var next = playlist.querySelector('li.playing').nextSibling;
+                var play = true
+                if (next === null){
+                    next = $(playlist.querySelector('li')).first();
+                    play = false
+                }
+                next = $(next)
                 next.addClass('playing').siblings().removeClass('playing');
                 this.load($('a', next).attr('data-src'));
-                this.play();
+                if(play) this.play();
 
             };
 
