@@ -4,6 +4,8 @@
         {% with object.get_content_model.images.all|get_type:'card' as images %}
             {% if images %}
                 <img src="{{ MEDIA_URL }}{% thumbnail images.0.file 900 400 %}" />
+            {% elif object.get_content_model.link_images.all %}
+                <img src="{{ MEDIA_URL }}{% thumbnail object.get_content_model.link_images.all.0.image 900 400 %}" />
             {% else %}
                 {% with page.get_ascendants|last as top_level_parent %}
                     {% if top_level_parent.get_content_model.weaving_css_class %}

@@ -69,6 +69,7 @@
         {% if page.get_ascendants|length == 1 %}
             {% children_pages page.id as childrens %}
             {% if childrens %}
+                <p>HEHE</p>
                 <div class="page__childrens">
                     {% for child in childrens %}
                         {% if child.in_menus.0 %}
