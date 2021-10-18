@@ -67,12 +67,15 @@ $module: ".sidebar";
         right: 0px;
     }
 
-    .sidebar__login_language * {
-        top: 15px;
-        position: static;
+    .sidebar__login_language .profilSelector {
+        position: relative;
+        left: 35px;
+        display: flex;
+        flex-direction: column;
     }
 
     .sidebar__login_language .profil-menu {
+        top: 0px;
         margin-top: 0px;
     }
 
@@ -80,4 +83,47 @@ $module: ".sidebar";
         background-color: white;
     }
 
+    .profil-menu {
+
+        .profil-menu__item {
+
+            @include padding(0 .25);
+            visibility: hidden;
+            display: inline-block;
+
+            >a {
+
+                color: black;
+
+            }
+
+        }
+
+        .profil-menu__item:first-child{
+            visibility: visible;
+        }
+
+    }
+
+    .profil-menu.open {
+        .profil-menu__item {
+            visibility: visible;
+        }
+    }
+
+    .fa-user-circle:after{
+        display: inline;
+        margin-left: 3px;
+        content: '\f107';
+        color: black;
+        top: 0;
+        right: 0;
+
+        font-family: FontAwesome;
+        font-size: 0.8em;
+
+        @include line-height($header-pre-height);
+        @include margin-right(.5);
+        @include transition(all 0.2s ease-in-out);
+    }
 }

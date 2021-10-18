@@ -67,6 +67,13 @@ $module: ".profil-menu";
 
         }
 
+        #{$module}__item:first-child {
+
+            display: block;
+            background: rgba(0, 0, 0, 0);
+
+        }
+
         &:after {
 
             @include transform(rotate(180deg));
@@ -89,25 +96,6 @@ $module: ".profil-menu";
         @include line-height($header-pre-height);
         @include margin-right(.5);
         @include transition(all 0.2s ease-in-out);
-    }
-
-    .sidebar & {
-
-        top: 15px;
-
-        #{$module}__item {
-
-            display: inline-block;
-            @include padding(0 .25);
-
-            >a {
-
-                color: black;
-
-            }
-
-        }
-
     }
 
 }

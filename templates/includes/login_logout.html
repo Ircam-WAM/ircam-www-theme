@@ -1,9 +1,12 @@
 {% load i18n pages_tags mezzanine_tags static keyword_tags event_tags organization_tags %}
 
-<ul class="profil-menu" id="ProfilSelector">
+<ul class="profil-menu profilSelector">
     {% if request.user.is_authenticated %}
         <li class="profil-menu__item active">
-            <a href="#" class="unclickable">{{ request.user.username }}<i class="fa fa-user-circle"></i></a>
+            <a href="#" class="unclickable"><i class="fa fa-user-circle"></i></a>
+        </li>
+        <li class="profil-menu__item">
+            {{ request.user.username }}
         </li>
         {% if user.is_authenticated and user.person %}
             {% get_pages_in_menu menu_person_id as menu_login_logout %}
