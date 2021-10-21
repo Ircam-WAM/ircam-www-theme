@@ -59,7 +59,7 @@
     {% block event_detail_content %}
         {% if event.content %}
             {% editable event.content %}
-                {{ event.content|richtext_filters|safe }}
+                {{ event.content|richtext_filters|ytb_iframe|safe }}
             {% endeditable %}
         {% endif %}
     {% endblock %}
