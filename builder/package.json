@@ -11,7 +11,7 @@
     "gen:favicons": "babel-node generate_favicons.js",
     "min:img": "babel-node minify_images.js",
     "process:sass": "babel-node process_sass.js",
-    "watch": "babel-node build.js"
+    "watch:sass": "watch 'babel-node process_sass.js /srv/app/ircam_www_theme/static/css/index.min.css' /srv/app/ircam_www_theme/static/src/sass"
   },
   "keywords": [],
   "dependencies": {
@@ -26,6 +26,7 @@
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
     "sass": "^1.38.0",
-    "uglify-js": "^3.14.1"
+    "uglify-js": "^3.14.1",
+    "watch": "^1.0.2"
   }
 }

@@ -3,6 +3,9 @@ import fs from 'fs'
 import sass from 'sass'
 import path from 'path'
 
+let dest_path = "/tmp/index.css"
+if(process.argv.slice(2).length != 0) dest_path = process.argv.slice(2)[0]
+
 sass.render(
 	{
 		file: "/srv/app/ircam_www_theme/static/src/sass/index.scss",
@@ -17,7 +20,7 @@ sass.render(
     }, function(err, result) {
 	  	if(!err){
 		    fs.writeFile(
-		    	"/tmp/index.css",
+		    	dest_path,
 		    	result.css,
 		    	function(err){
 			        if(err){

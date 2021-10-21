@@ -1,13 +1,19 @@
 version: '3.6'
 services:
-    builder:
+    builder_watch_css:
         build:
             context: .
             dockerfile: ./Dockerfile
         volumes:
             - ./process_sass.js:/srv/app/process_sass.js
-            - ./generate_favicons.js:/srv/app/generate_favicons.js
-            - ./build.sh:/srv/app/build.sh
-            - ./minify_images.js:/srv/app/minify_images.js
+            - ./watch_css.sh:/srv/app/build.sh
+            - ./package.json:/srv/app/package.json
+            - ..:/srv/app/ircam_www_theme
+    builder_watch_js:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - ./watch_js.sh:/srv/app/build.sh
             - ./package.json:/srv/app/package.json
             - ..:/srv/app/ircam_www_theme
