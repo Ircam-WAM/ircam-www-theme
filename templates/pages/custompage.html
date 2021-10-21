@@ -61,7 +61,7 @@
         {% if page.custompage.content %}
             {% if page.custompage.content %}
                 {% editable page.custompage.content %}
-                    {{ page.custompage.content|richtext_filters|safe }}
+                    {{ page.custompage.content|richtext_filters|ytb_iframe|safe }}
                 {% endeditable %}
             {% endif %}
         {% endif %}
