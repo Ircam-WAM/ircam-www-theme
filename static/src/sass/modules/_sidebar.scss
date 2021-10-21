@@ -69,7 +69,6 @@ $module: ".sidebar";
 
     .sidebar__login_language .profilSelector {
         position: relative;
-        left: 35px;
         display: flex;
         flex-direction: column;
     }
@@ -77,6 +76,16 @@ $module: ".sidebar";
     .sidebar__login_language .profil-menu {
         top: 0px;
         margin-top: 0px;
+    }
+
+    .sidebar__login_language .profil-menu.authenticated{
+        width : 30px;
+        cursor: pointer;
+
+        .fa-user-circle{
+            height: auto;
+        }
+
     }
 
     .sidebar__login_language .profil-menu.open li{

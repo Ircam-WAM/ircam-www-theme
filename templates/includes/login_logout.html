@@ -1,22 +1,27 @@
 {% load i18n pages_tags mezzanine_tags static keyword_tags event_tags organization_tags %}
 
-<ul class="profil-menu profilSelector">
+<ul class="profil-menu profilSelector {% if request.user.is_authenticated %}authenticated{% endif %}">
     {% if request.user.is_authenticated %}
         <li class="profil-menu__item active">
             <a href="#" class="unclickable"><i class="fa fa-user-circle"></i></a>
-        </li>
-        <li class="profil-menu__item">
-            {{ request.user.username }}
         </li>
         {% if user.is_authenticated and user.person %}
             {% get_pages_in_menu menu_person_id as menu_login_logout %}
             {% for menu_item in menu_login_logout %}
                 {% if not menu_item.parent %}
                     <li class="profil-menu__item">
-                        <a href="{{ menu_item.get_absolute_url }}">{{ menu_item.title }}</a>
+                        {% if menu_item.title == 'PROFILE' %}
+                            <a href="{{ menu_item.get_absolute_url }}">{{ request.user.username }}</a>
+                        {% else %}
+                            <a href="{{ menu_item.get_absolute_url }}">{{ menu_item.title }}</a>
+                        {% endif %}
                     </li>
                 {% endif %}
             {% endfor %}
+        {% else %}
+            <li class="profil-menu__item">
+                {{ request.user.username }}
+            </li>
         {% endif %}
         <li class="profil-menu__item">
             <a href = "/serverlogout/?next={{ request.path }}" id='serverLogout'>Logout</a>
