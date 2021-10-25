@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-
 setup(
     name='ircam_www_theme',
     version='2.0',
