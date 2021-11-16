@@ -43,14 +43,14 @@ $module: ".page-box";
 
         @include fluid-aspect(9 4);
 
-        @include mq($until: xs) {
+        /* @include mq($until: xs) {
             @include fluid-aspect(4.5 8);
             >img:first-child {
                 width: 310%;
                 left: -50%;
                 max-width: none;
             }
-        }
+        } */
 
         &:after {
             content: '';
