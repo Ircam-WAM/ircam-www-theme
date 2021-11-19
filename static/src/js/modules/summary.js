@@ -1,9 +1,5 @@
 var Summary = function() {
 
-    this.$summary = $('[data-summary]');
-    this.$content = $('[data-summary-content]');
-    this.$links = [];
-
     //
     // Init
     //
@@ -13,117 +9,78 @@ var Summary = function() {
 
 Summary.prototype.init = function() {
 
-    var that = this,
-        $template, sectionCount = 0;
+    var links = document.getElementsByClassName("nav-page-link")
 
-    if(that.$summary.length == 1 && that.$content.length > 0) {
+    if(links.length > 0){
 
-        $template = that.$summary.find('li:first-child');
-        that.$content.each(function(idx) {
-
-            $(this).find('h2:not(.page-box__title)').each(function(idx) {
-
-                var $element = $(this),
-                    $template_clone = $template.clone();
-
-                $template_clone.find('a').text($element.text());
-                $template_clone.find('a').attr('href', '#section-' + sectionCount);
-                $template_clone.removeClass('hide');
-
-                $template_clone.find('a').bind('click', function(e) {
-
-                    e.preventDefault();
+        var slows = document.getElementsByClassName("slow-move")
+        for(var s in slows){
+            if(typeof slows[s] == "object"){
+                slows[s].addEventListener('click', function(e) {
+                    e.preventDefault()
                     var self = $(this);
                     $('html, body').animate({
-                		scrollTop:$(self.attr('href')).offset().top
-                	}, 'slow');
+                        scrollTop:$(self.attr('href')).offset().top
+                    }, 'slow');
+                    window.history.replaceState({}, '', self.attr('href'))
                     return false;
-
                 });
+            }
+        }
 
-                that.$links.push($template_clone.find('a'));
+        var lastMenuItemSelected = null
 
-                that.$summary.append($template_clone);
+        var linkObj = []
+        for(var l in links){
+            if(typeof links[l] == "object"){
+                var id = links[l].getAttribute("href").replace("#", "")
+                linkObj.push(
+                    [
+                        links[l],
+                        document.getElementById(id)
+                    ]
+                )
+            }
+        }
+        linkObj.sort(function(first, second){
+            return first[1] - second[1]
+        })
 
-                $element.attr('id', "section-" + sectionCount);
-                sectionCount++;
+        document.addEventListener("scroll", function(e){
 
-                $element.waypoint(function(direction) {
-                    that.$links.forEach(function (elem) {
-                        elem.removeClass('active');
-                    });
+            var topBottoms = []
 
-                    $('[href="#' + $(this.element).attr('id') + '"]').addClass('active');
-                }, {
-                    offset: '200'
-                });
+            for(var o in linkObj){
+                topBottoms.push([
+                    linkObj[o][0],
+                    linkObj[o][1].getBoundingClientRect(),
+                ])
+            }
 
-                $element.waypoint(function(direction) {
-                    that.$links.forEach(function (elem) {
-                        elem.removeClass('active');
-                    });
-                    var sectionNumber = parseInt($(this.element).attr('id').substr(8));
-                    sectionNumber--;
-                    $('[href="#section-' + sectionNumber + '"]').addClass('active');
-                }, {
-                    offset: '50%'
-                });
-
-            });
-
+            if(topBottoms[0][1].top <= 0 && topBottoms[topBottoms.length-1][1].bottom >= 0){
+                for(var l in topBottoms){
+                    if(
+                        topBottoms[l][1].top <= 30 && topBottoms[l][1].bottom >= 30
+                    ){
+                        if(lastMenuItemSelected != topBottoms[l][0]){
+                            topBottoms[l][0].classList.add("active")
+                            if(lastMenuItemSelected != null){
+                                lastMenuItemSelected.classList.remove("active")
+                            }
+                            lastMenuItemSelected = topBottoms[l][0]
+                        }else{
+                            break;
+                        }
+                    }
+                }
+            }else{
+                for(var l in topBottoms){
+                    topBottoms[l][0].classList.remove("active")
+                }
+                lastMenuItemSelected = null
+            }
         });
-
-        $template.remove();
-
-        // Scrollspy
-        //$(document).on("scroll", that.onScroll.bind(that));
-
-        // Row height
-        if($('.page__sidebar .nav-tree--level-0').height() > $('.page__content').height()) {
-
-            $('.page__content').css({
-                'margin-bottom': $('.page__sidebar .nav-tree--level-0').height() - $('.page__content').height() + 48
-            });
-
-        }
-
     }
-
-};
-
-Summary.prototype.onScroll = function(e) {
-
-    var scrollPos = $(document).scrollTop(),
-        that = this,
-        currentTitle, minDiff = 200;
-
-    that.$links.forEach(function (elem) {
-        var currLink = elem;
-        var refElement = $(elem.attr("href"));
-        var diff = refElement.offset().top - scrollPos;
-        if(diff < minDiff && diff < 200) {
-            minDiff = diff;
-            currentTitle = refElement;
-        }
-        if (refElement.position().top <= scrollPos) {
-            that.$links.forEach(function (elem) {
-                elem.removeClass('active');
-            });
-            currLink.addClass("active");
-        }
-        else{
-            currLink.removeClass("active");
-        }
-    });
-
-    that.$links.forEach(function (elem) {
-        elem.removeClass('active');
-    });
-
-    if(currentTitle) {
-        $('[href="#' + currentTitle.attr('id') + '"]').addClass('active');
-    }
-
 };
 
 module.exports = Summary;

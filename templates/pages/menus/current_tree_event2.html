@@ -1,0 +1,47 @@
+{% load i18n pages_tags organization_tags utils_tags %}
+
+{% spaceless %}
+{% if menu %}
+    {% for page in menu %}
+        {% if forloop.first %}
+            <ul class="nav-tree nav-tree--level-0">
+        {% endif %}
+        {% if page|is_list %}
+            {% for pagee in page %}
+                {% if forloop.first %}
+                    <ul class="nav-tree nav-tree--level-1">
+                {% endif %}
+                        <li class="nav-tree__item nav-tree__item--sub">
+                            {% if pagee|is_list %}
+                                {% for pageee in pagee %}
+                                    {% if forloop.first %}
+                                        <ul class="nav-tree nav-tree--level-2">
+                                    {% endif %}
+                                            <li class="nav-tree__item nav-tree__item--sub">
+                                                <a class="nav-tree__link nav-tree__link--niv4 nav-page-link {{pageee.extra_class}}" href="#{{ pageee.href }}">{{ pageee.text }}</a>
+                                            </li>
+                                    {% if forloop.last %}
+                                        </ul>
+                                    {% endif %}
+                                {% endfor %}
+                            {% elif pagee|is_dict %}
+                                <a class="nav-tree__link nav-tree__link--sub nav-page-link {{pagee.extra_class}}" href="#{{ pagee.href }}">{{ pagee.text }}</a>
+                            {% else %}
+                                <a class="nav-tree__link nav-tree__link--sub" href="{{ pagee.get_absolute_url }}">{{ pagee.title }}</a>
+                            {% endif %}
+                        </li>
+                {% if forloop.last %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <li class="nav-tree__item">
+                <a class="nav-tree__link{% if request.page == page %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+            </li>
+        {% endif %}
+        {% if forloop.last %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% endspaceless %}

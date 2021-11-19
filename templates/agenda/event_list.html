@@ -36,9 +36,32 @@
 
 {% block main %}
     <div class="page page--{% spaceless %}{% block page_class %}{% endblock %}{% endspaceless %}">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9 col-sm-push-3 col-lg-6 col-lg-push-2">
+        <div class="container sidebar_content">
+            <div class="row event_list_title">
+                <div class="col-sm-3 col-lg-2 page__sidebar">
+                    <div style="position: relative;" >
+                        <div class="nav-tree-wrapper">
+
+                            {% include "pages/menus/current_tree_event2.html" %}
+
+                            {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
+                                <ul class="nav-tree nav-tree--level-{{ branch_level }}">
+                                    {% if tag_list %}
+                                        {% for t in tag_list %}
+                                            <li class="nav-tree__item">
+                                                <a class="nav-tree__link--filter nav-tree__link{% if tag == t %} active{% endif %}" href="{% if tag == t %}{% url 'event_list' %}{% else %}{% url "event_list_tag" t.slug %}{% endif %}">
+                                                    {{ t }} {% if tag == t %}<i class="fa fa-times"></i>{% endif %}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-push-3 col-lg-push-2 col-sm-6 col-lg-6">
                     <h1 class="dotted">
                         {% if tag and tag.id|tag_is_excluded %}
                             {% trans "On tour" %}
@@ -49,7 +72,7 @@
                         {% endif %}
                     </h1>
                 </div>
-                <div class="col-sm-3 col-lg-4 col-lg-push-2">
+                <div class="col-sm-3 col-lg-4 col-sm-push-3 col-lg-push-2">
                     {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
                         <a class="banner banner--light banner--sidebar hide-until-sm" href="{% url 'event_list_tag' 'tournees' %}"
                             style="background-image:url({% static 'img/services/tours.jpg' %});">
@@ -73,57 +96,39 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-3 col-lg-2 page__sidebar">
-                    <div style="position: relative;" >
-                        <div class="nav-tree-wrapper" data-sticky data-sticky-parent="row" data-sticky-offset="100" data-sticky-detach-at="971">
-                            {% page_menu "pages/menus/current_tree_event.html" %}
-                            {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
-                                <ul class="nav-tree nav-tree--level-{{ branch_level }}">
-                                {% keywords_for mezzanine_agenda.event as tags %}
-                                    {# {% all_events as all_events %}#}
-                                    {% if tags %}
-                                        {% comment %}
-                                            <a href="{% url 'event_list' %}" class="button{% if not tag %} button--black{% else %} button--white{% endif %}">{% trans "All events" %}</a>
-                                        {% endcomment %}
-                                        {% for t in tags %}
-                                            {% if not t.id|tag_is_excluded %}
-                                                <li class="nav-tree__item">
-                                                    <a class="nav-tree__link--filter nav-tree__link{% if tag == t %} active{% endif %}" href="{% if tag == t %}{% url 'event_list' %}{% else %}{% url "event_list_tag" t.slug %}{% endif %}">
-                                                        {{ t }} {% if tag == t %}<i class="fa fa-times"></i>{% endif %}
-                                                    </a>
-                                                </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    {% endif %}
-                                </ul>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb2 col-sm-9 col-lg-10 page__content" data-summary-content>
+                <div class="mb2 col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2 page__content">
                     <div class="page__content">
                         <div class="container">
-                            {% for event in events %}
-                                {% include 'agenda/event/includes/event_linecard.html' %}
-                            {% endfor %}
+                            {% if ordered_by_month %}
+                                {% for month, events in events.items %}
+                                    <div id="{{month|slugify}}">
+                                        {% for event in events %}
+                                            {% include 'agenda/event/includes/event_linecard.html' %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for event in events %}
+                                    {% include 'agenda/event/includes/event_linecard.html' %}
+                                {% endfor %}
+                            {% endif %}
                             {% if tag and not tag.id|tag_is_excluded or not tag and not is_archive %}
-                            <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list_tag' 'tournees' %}"
-                                style="background-image:url({% static 'img/services/tours.jpg' %});">
-                                <div class="banner__content">
-                                    <div class="banner__title fsxxxl">{% trans "On tour" %}
+                                <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list_tag' 'tournees' %}"
+                                    style="background-image:url({% static 'img/services/tours.jpg' %});">
+                                    <div class="banner__content">
+                                        <div class="banner__title fsxxxl">{% trans "On tour" %}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
                             {% elif event_tag_highlighted == tag.id  %}
-                            <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list' %}"
-                                style="background-image:url({% static 'img/services/rdv_paris.jpg' %});">
-                                <div class="banner__content">
-                                    <div class="banner__title fsxxxl">
-                                        {% trans "Rendez-vous in Paris" %}
+                                <a class="banner banner--light banner--sidebar hide-from-sm" href="{% url 'event_list' %}"
+                                    style="background-image:url({% static 'img/services/rdv_paris.jpg' %});">
+                                    <div class="banner__content">
+                                        <div class="banner__title fsxxxl">
+                                            {% trans "Rendez-vous in Paris" %}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
                             {% endif %}
                         </div>
                     </div>

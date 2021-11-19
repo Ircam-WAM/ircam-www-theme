@@ -31,10 +31,12 @@
                     <div style="position: relative;">
                         {% block page_sidebar %}
                             {% if page.get_ascendants|length < 2 %}
-                                {% page_menu "pages/menus/current_tree_primary.html" %}
+                                {% include "pages/menus/current_tree_primary2.html" %}
+                                {# page_menu "pages/menus/current_tree_primary.html" #}
                             {% endif %}
-                            {% if page.get_ascendants|length == 2 %}
-                                {% page_menu "pages/menus/current_tree_secondary.html" %}
+                            {% if page.get_ascendants|length >= 2 %}
+                                {% include "pages/menus/current_tree_secondary2.html" %}
+                                {# page_menu "pages/menus/current_tree_secondary.html" #}
                             {% endif %}
                         {% endblock %}
                     </div>
@@ -44,7 +46,7 @@
 
         {% if display_content != False %}
 
-            <div class="container">
+            <div class="container sidebar_content">
 
                 <div class="row">
 
@@ -104,6 +106,7 @@
                 {% with content_type=dm.content_type_id|get_content_type %}
                 {% with m_object=content_type|get_object:dm.object_id %}
                 {% with template='media/'|add:content_type.model|add:"/includes/"|add:m_object.type|add:".html" %}
+                    {{ template }}
                     {% include template with object=m_object %}
                 {% endwith %}
                 {% endwith %}

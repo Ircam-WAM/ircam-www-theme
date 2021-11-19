@@ -1,7 +1,7 @@
 {% load organization_tags mezzanine_tags i18n %}
 {% if person_list_block.title %}
 
-    <div class="white-bg pb2">
+    <div class="white-bg pb2" id="list_{{person_list_block.title|slugify}}">
         
         {% if index != 0 and separator_before == "1" or separator_before == True or separator_before == None %}
             <hr class="mt0" />
@@ -11,7 +11,7 @@
 
             <div class="row">
 
-                <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2" data-summary-content>
+                <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
 
                     <h2 class="dotted">{{ person_list_block.title }}</h2>
                     {% if person_list_block.description %}

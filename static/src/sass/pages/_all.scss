@@ -31,14 +31,16 @@
 	}
 
 	.page__sidebar{
-		height: 0px;
-		top: 168px;
-		position: relative;
+		position: absolute;
 	}
 
 	.page__sidebar_container{
 		height: 0px;
 	}
+	.page__sidebar{
+		width: 250px;
+	}
+
 }
 
 @media screen and (min-width: 1372px){
@@ -50,4 +52,23 @@
 		margin-left: 15%;
 		width: 85%;
 	}
+	.page__sidebar{
+		width: 230px;
+	}
 }
+
+@media screen and (max-width: 971px){
+	.event_list_title{
+		display: flex;
+	    flex-direction: column;
+	}
+	.event_list_title > div:first-child{
+		order: 3;
+	}
+	.page__sidebar{
+		position: static !important;
+	}
+
+}
+
+

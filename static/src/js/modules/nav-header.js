@@ -1,7 +1,6 @@
 var NavHeader = function() {
 
     this.element = document.getElementById('navHeader');
-    console.log()
     this.elements = this.element.getElementsByClassName('nav-header__item');
 
     //

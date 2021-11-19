@@ -1,11 +1,6 @@
 {% load i18n  mezzanine_tags event_tags keyword_tags disqus_tags organization_tags %}
 
 <div class="row event-line-box">
-    {% ifchanged event.start.month %}
-        <div class="col-sm-12 col-md-12 col-lg-12 event-line-box__month">
-            <h2>{{ event.start|date:'F' }}</h2>
-        </div>
-    {% endifchanged %}
     <div class="col-sm-12 col-md-12 col-lg-12 event-line-box__content">
         <div class="row">
             <div class="col-xs-3">
