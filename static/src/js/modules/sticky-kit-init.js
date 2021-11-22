@@ -10,25 +10,51 @@ var StickyKitInit = function() {
 StickyKitInit.prototype.init = function() {
 
     var sidebar = document.getElementsByClassName("page__sidebar")
-    var content = document.getElementsByClassName("sidebar_content")[0]
+    var content = document.getElementsByClassName("sidebar_content")
+    var sliders = document.getElementsByClassName("page__slider")
     var position = "absolute"
-    if(sidebar.length > 0){
+    if(sidebar.length > 0 && content.length > 0){
         sidebar = sidebar[0]
+        content = content[0]
         document.addEventListener("scroll", function(){
-            if(content.getBoundingClientRect().top < 100){
-                if(((content.getBoundingClientRect().bottom - sidebar.getBoundingClientRect().bottom) > 0) || (sidebar.getBoundingClientRect().top > 100 && (content.getBoundingClientRect().bottom - sidebar.getBoundingClientRect().bottom) == 0) ){
-                    position = "fixed"
-                    sidebar.style.position = position
-                    sidebar.style.top = "100px"
+            if(window.innerWidth >= 972){
+                if(content.getBoundingClientRect().top < 100){
+                    if((Math.round(content.getBoundingClientRect().bottom - sidebar.getBoundingClientRect().bottom) > 0) || (sidebar.getBoundingClientRect().top > 100 && Math.round(content.getBoundingClientRect().bottom - sidebar.getBoundingClientRect().bottom) == 0) ){
+                        position = "fixed"
+                        sidebar.style.position = position
+                        sidebar.style.top = "100px"
+                    }else{
+                        position = "absolute"
+                        sidebar.style.position = position
+                        sidebar.style.top = (window.scrollY + content.getBoundingClientRect().bottom - sidebar.clientHeight) + "px"
+                    }
                 }else{
                     position = "absolute"
                     sidebar.style.position = position
-                    sidebar.style.top = (window.scrollY + content.getBoundingClientRect().bottom - sidebar.clientHeight) + "px"
+                    sidebar.style.top = "auto"
                 }
-            }else{
-                position = "absolute"
-                sidebar.style.position = position
-                sidebar.style.top = "auto"
+                for(var s in sliders){
+                    if(typeof sliders[s] == "object"){
+                        var rect = sliders[s].getBoundingClientRect()
+                        var sidebar_rect = sidebar.getBoundingClientRect()
+                        if(
+                            (
+                                sidebar_rect.bottom - rect.top > 0 &&
+                                sidebar_rect.bottom - rect.bottom < 0
+                            ) || (
+                                sidebar_rect.top - rect.top > 0 &&
+                                sidebar_rect.top - rect.bottom < 0
+                            ) || (
+                                sidebar_rect.top < rect.top &&
+                                sidebar_rect.bottom > rect.bottom
+                            )
+                        ){
+                            sidebar.querySelector("ul").classList.add("faded")
+                        }else{
+                            sidebar.querySelector("ul").classList.remove("faded")
+                        }
+                    }
+                }
             }
         })
         window.addEventListener("resize", function(){

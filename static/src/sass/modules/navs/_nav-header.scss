@@ -124,25 +124,18 @@ $module: ".nav-header";
             }
         }
 
-        /*&.hover {
+        &.hover {
             &:before {
-                content: "";
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 1px;
-                right: 0;
-                bottom: -1px;
-                z-index: 3;
-
-                background: #F8F8F8;
-                border-top: 1px solid #E3E3E3;
-                border-left: 1px solid #E3E3E3;
-                border-right: 1px solid #E3E3E3;
-                border-bottom: 1px solid #F8F8F8;
+                height:2px;
+            }
+            & > a {
+                border-bottom : 3px solid #F8F8F8;
+                border-top : 1px solid #E3E3E3;
+                background-color: #F8F8F8;
+                line-height: initial;
             }
 
-        }*/
+        }
 
         @include mq($until: sm) {
 
@@ -169,6 +162,8 @@ $module: ".nav-header";
     }
 
     &__item-link {
+
+        line-height: initial !important;
 
         text-transform: lowercase;
         color: inherit;

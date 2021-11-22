@@ -34,14 +34,15 @@
 {% endblock %}
 
 {% block page_tags %}
-
-    {% if department_name %}
-        <div class="tag dashed dashed--gray">
-          {{ department_name }}
+    <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
+        {% if department_name %}
+            <div class="tag dashed dashed--gray">
+              {{ department_name }}
+            </div>
+        {% endif %}
+        <div class="tag tag--category">
+            {% trans 'News' %}
         </div>
-    {% endif %}
-    <div class="tag tag--category">
-        {% trans 'News' %}
     </div>
 
 {% endblock %}

@@ -3,7 +3,7 @@
     <div class="white-bg pb2">
         <div class="container">
             <div class="row tac">
-                <div class="col-xs-12 related_content_block_title {% if not nav %}related_content_block_title{% endif %}">
+                <div class="col-xs-12 {% if nav %}related_content_block_title{% endif %}">
                     <h2 class="dashed dashed--center mt2">{% if object.related_title.title %}{{ object.related_title.title }}{% else %}{% trans "Also discover" %}{% endif %}</h2>
                 </div>
             </div>

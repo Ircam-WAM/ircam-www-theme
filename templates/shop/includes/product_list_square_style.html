@@ -1,6 +1,6 @@
 {% load organization_tags mezzanine_tags %}
 {% if list %}
-    <div class="white-bg pb2">
+    <div class="white-bg pb2" id="{{list.title|slugify}}">
         {% if separator_before == "1" or separator_before == True or separator_before == None %}
             <hr class="mt0" />
         {% endif %}
