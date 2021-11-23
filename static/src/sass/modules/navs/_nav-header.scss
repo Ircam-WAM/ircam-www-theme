@@ -34,7 +34,13 @@ $module: ".nav-header";
     display: flex;
     justify-content:center;
 
-    @media (max-width: 1172px) {
+    @media (max-width: 1072px) {
+        .active{
+            display:block;
+        }
+    }
+
+    @media (max-width: 971px) {
         width: 100%;
         display: block;
     }
@@ -54,7 +60,7 @@ $module: ".nav-header";
 
         border-right: 1px black solid;
 
-        @media (max-width: 1172px) {
+        @media (max-width: 971px) {
             border: 0px;
         }
 
@@ -125,13 +131,13 @@ $module: ".nav-header";
         }
 
         &.hover {
+            background-color: #F8F8F8;
             &:before {
                 height:2px;
             }
             & > a {
                 border-bottom : 3px solid #F8F8F8;
                 border-top : 1px solid #E3E3E3;
-                background-color: #F8F8F8;
                 line-height: initial;
             }
 
