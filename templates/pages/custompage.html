@@ -154,7 +154,9 @@
     {% block page_related_content %}
         {# remove page_related_content block of navigation rider if it is at the end of page (as it is by default in standart page) #}
         {% if page.custompage.block_order|slice:"10:11" != '5' or page.custompage.related_title.display_mode == '1' %}
+            {% language "fr" %}
             <div style="order:{{ page.custompage.block_order|slice:"10:11" }};" id="{{page.related_title.title|slugify}}">
+            {% endlanguage %}
                 {% if page.dynamic_content_pages.all|get_content_objects and page.custompage.separator|slice:"10:11" == '1' %}
                     <hr class="mt0 mb0" />
                 {% endif %}
@@ -167,7 +169,9 @@
         {% else %}
         </div>
             </div>
+            {% language "fr" %}
             <div id="{{page.related_title.title|slugify}}">
+            {% endlanguage %}
                 {% if page.dynamic_content_pages.all|get_content_objects and page.custompage.separator|slice:"10:11" == '1' %}
                     <hr class="mt0 mb0" />
                 {% endif %}
