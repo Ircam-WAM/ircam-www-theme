@@ -11,7 +11,7 @@
                 {% endif %}
 
                 <li class="nav-tree__item">
-                    <a class="nav-tree__link{% if request.page == page %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                    <a class="nav-tree__link{% if request.page.id == page.id %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
                 </li>
 
                <!--  {% if page == request.page %}
