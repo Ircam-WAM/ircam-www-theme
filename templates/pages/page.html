@@ -104,7 +104,6 @@
                 {% with content_type=dm.content_type_id|get_content_type %}
                 {% with m_object=content_type|get_object:dm.object_id %}
                 {% with template='media/'|add:content_type.model|add:"/includes/"|add:m_object.type|add:".html" %}
-                    {{ template }}
                     {% include template with object=m_object %}
                 {% endwith %}
                 {% endwith %}

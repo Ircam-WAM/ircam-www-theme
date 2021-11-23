@@ -71,6 +71,38 @@
                 </ul>
             {% endif %}
         {% endfor %}
+    {% elif page_depth == 3 %}
+        {% for page in menu %}
+            {% if forloop.first %}
+                <ul class="nav-tree nav-tree--level-{{ page_depth }}" data-sticky data-sticky-parent="page" data-sticky-offset="100" data-sticky-detach-at="971">
+            {% endif %}
+            <li class="nav-tree__item">
+                {% if not page|is_list %}
+                    <a class="nav-tree__link{% if request.page == page %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                {% else %}
+                    <ul class="nav-tree">
+                        {% for subpage in page %}
+                            {% if subpage|is_dict %}
+                                <li class="nav-tree__item nav-tree__item--sub">
+                                    <a class="nav-tree__link nav-tree__link--sub {{ subpage.extra_class }} nav-page-link" href="#{{subpage.href}}">{{subpage.text}}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+            <!-- <li class="nav-tree__item">
+                <a class="nav-tree__link{% if page.is_current or page.is_current_or_ascendant %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                {% if page.is_current_or_ascendant %}
+                    <ul class="nav-tree" data-summary>
+                        {% include "pages/menus/current_tree_summary.html" %}
+                    </ul>
+                {% endif %}
+            </li> -->
+            {% if forloop.last %}
+                </ul>
+            {% endif %}
+        {% endfor %}
     {% endif %}
 {% endif %}
 {% endspaceless %}

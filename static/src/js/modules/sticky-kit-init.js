@@ -62,6 +62,7 @@ StickyKitInit.prototype.init = function() {
                 sidebar.style.position = "static"
             }else{
                 sidebar.style.position = position
+                document.body.classList.remove("pushy-open-left")
             }
         })
     }
