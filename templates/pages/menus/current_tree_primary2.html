@@ -1,4 +1,4 @@
-{% load i18n pages_tags organization_tags %}
+{% load i18n pages_tags organization_tags utils_tags %}
 
 {% spaceless %}
 {% if menu %}
@@ -10,9 +10,19 @@
                     <ul class="nav-tree nav-tree--level-{{ page_depth }}" data-sticky data-sticky-parent="page" data-sticky-offset="100" data-sticky-detach-at="971">
                 {% endif %}
 
-                <li class="nav-tree__item">
-                    <a class="nav-tree__link{% if request.page.id == page.id %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
-                </li>
+                {% if not page|is_list %}
+                    <li class="nav-tree__item">
+                        <a class="nav-tree__link{% if request.page.id == page.id %} active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+                    </li>
+                {% else %}
+                    <ul class="nav-tree">
+                        {% for subpage in page %}
+                            <li class="nav-tree__item nav-tree__item--sub">
+                                 <a class="nav-tree__link nav-tree__link--sub {{ subpage.extra_class }} nav-page-link" href="{{ subpage.get_absolute_url }}">{{ subpage.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
 
                <!--  {% if page == request.page %}
                     {% if page.is_primary and page.is_current_or_ascendant %}
