@@ -17,9 +17,9 @@
     </div>
     <div class="page-box__content">
         <div>
-            <h2 class="page-box__title">{{ object.title }}</h2>
+            <h2 class="page-box__title">{{ object.title|truncatechars:40 }}</h2>
             <div class="page-box__subtitle">
-                {{ object.get_content_model.sub_title }}
+                {{ object.get_content_model.sub_title|truncatechars:60 }}
             </div>
         </div>
     </div>
