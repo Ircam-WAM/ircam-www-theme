@@ -27,6 +27,13 @@ $module: ".nav-actions";
     padding: 0;
     text-align: center;
 
+
+    @media screen and (max-width: 1371px) and (min-width: 972px){
+        &.nav-en-text li a{
+            font-size: 0.83rem;
+        }
+    }
+
     &__item {
 
         display: inline-block;
