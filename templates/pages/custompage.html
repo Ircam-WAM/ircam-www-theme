@@ -161,7 +161,7 @@
                     <hr class="mt0 mb0" />
                 {% endif %}
                 {% if page.custompage.related_title.display_mode == '1' %}
-                    {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page nav=True %}
+                    {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page nav=True display_as_title=page.custompage.related_title.as_page_title %}
                 {% else %}
                     {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
                 {% endif %}
