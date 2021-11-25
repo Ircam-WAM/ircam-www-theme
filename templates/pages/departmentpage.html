@@ -18,6 +18,8 @@
 {% endblock %}
 
 {% block page_content %}
+
+        <div class="navbar-start"></div>
         {{ linked_organization_content.all }}
         {% if linked_organization_content and research_slug == page.departmentpage.slug %}
             {% include 'pages/page/includes/linked_organization_content.html' %}
@@ -25,7 +27,6 @@
 
         {% if page.departmentpage.content %}
          {% editable page.departmentpage.content %}
-            <div class="navbar-start"></div>
             {{ page.departmentpage.content|richtext_filters|safe }}
          {% endeditable %}
         {% endif %}

@@ -54,6 +54,7 @@
 
         {% if page.custompage.sub_title %}
             {% editable page.custompage.sub_title %}
+                <div class="navbar-start"></div>
                 <div class="chapo">
                     {{ page.custompage.sub_title }}
                 </div>
@@ -61,6 +62,7 @@
         {% endif %}
 
         {% if page.custompage.content %}
+            <div class="navbar-start"></div>
             {% if page.custompage.content %}
                 {% editable page.custompage.content %}
                     {{ page.custompage.content|richtext_filters|ytb_iframe|safe }}
