@@ -37,6 +37,14 @@
     {% endeditable %}
 {% endblock %}
 
+{% block main %}
+    <div class="sidebar_content">
+        {% with display_content=page.custompage.display_content overide_sidebar_content=True %}
+            {{ block.super }}
+        {% endwith %}
+    </div>
+{% endblock %}
+
 {% block page_content %}
     {% with page.get_ascendants|last as top_level_parent %}
         {% if linked_organization_content and research_slug == top_level_parent.slug %}

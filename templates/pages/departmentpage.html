@@ -18,17 +18,26 @@
 {% endblock %}
 
 {% block page_content %}
-    {{ linked_organization_content.all }}
-    {% if linked_organization_content and research_slug == page.departmentpage.slug %}
-        {% include 'pages/page/includes/linked_organization_content.html' %}
-    {% endif %}
+        {{ linked_organization_content.all }}
+        {% if linked_organization_content and research_slug == page.departmentpage.slug %}
+            {% include 'pages/page/includes/linked_organization_content.html' %}
+        {% endif %}
 
-    {% if page.departmentpage.content %}
-     {% editable page.departmentpage.content %}
-        {{ page.departmentpage.content|richtext_filters|safe }}
-     {% endeditable %}
-    {% endif %}
+        {% if page.departmentpage.content %}
+         {% editable page.departmentpage.content %}
+            <div class="navbar-start"></div>
+            {{ page.departmentpage.content|richtext_filters|safe }}
+         {% endeditable %}
+        {% endif %}
 
+{% endblock %}
+
+{% block main %}
+    <div class="sidebar_content">
+        {% with display_content=page.custompage.display_content overide_sidebar_content=True %}
+            {{ block.super }}
+        {% endwith %}
+    </div>
 {% endblock %}
 
 {% block page_slider %}
@@ -53,6 +62,8 @@
 {% endblock %}
 
 {% block page_related_content %}
+    </div>
+        </div>
     {% with page.departmentpage.department|get_article_by_department as concrete_objects %}
         {% if concrete_objects %}
             <hr class="mt0 mb0" />

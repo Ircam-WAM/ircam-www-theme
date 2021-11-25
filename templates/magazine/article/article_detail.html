@@ -54,6 +54,7 @@
     {% endeditable %}
 
     {% if article.sub_title %}
+        <div class="navbar-start"></div>
         {% editable article.sub_title %}
             <div class="chapo">
                 {{ article.sub_title }}
@@ -65,6 +66,7 @@
 
 {% block page_content %}
 
+    <div class="navbar-start"></div>
     {% if article.content %}
       {% editable article.content %}
         {{ article.content|richtext_filters|ytb_iframe|safe }}

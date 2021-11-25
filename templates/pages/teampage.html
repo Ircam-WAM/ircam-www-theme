@@ -25,6 +25,7 @@
             {% include 'pages/page/includes/linked_organization_content.html' %}
         {% endif %}
     {% endwith %}
+    <div class="navbar-start"></div>
     {% if page.teampage.sub_title %}
         {% editable page.teampage.sub_title %}
             <div class="chapo">
@@ -73,6 +74,14 @@
         {% endif %}
         {% include "core/inc/block.html" %}
     {% endwith %}
+{% endblock %}
+
+{% block main %}
+    <div class="sidebar_content">
+        {% with display_content=page.custompage.display_content overide_sidebar_content=True %}
+            {{ block.super }}
+        {% endwith %}
+    </div>
 {% endblock %}
 
 {% block related_project %}
@@ -162,4 +171,10 @@
     {% if page.teampage.team.hal_tutelage and page.teampage.team.hal_researche_structure %}
         {% include "pages/teampage/includes/hal.html" with team=page.teampage.team %}
     {% endif %}
+{% endblock %}
+
+{% block page_related_content %}
+    </div>
+        </div>
+        {% include "core/inc/related_content_dynamic.html" with concrete_objects=page.dynamic_content_pages.all|get_content_objects object=page %}
 {% endblock %}

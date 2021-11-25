@@ -32,7 +32,7 @@
 
     {% block main %}
         <div class="sidebar_content">
-            {% with display_content=page.custompage.display_content custom_page=True %}
+            {% with display_content=page.custompage.display_content overide_sidebar_content=True %}
                 {{ block.super }}
             {% endwith %}
         </div>

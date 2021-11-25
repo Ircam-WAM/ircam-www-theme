@@ -21,6 +21,14 @@
     {% endwith %}
 {% endblock %}
 
+{% block main %}
+    <div class="sidebar_content">
+        {% with overide_sidebar_content=True %}
+            {{ block.super }}
+        {% endwith %}
+    </div>
+{% endblock %}
+
 {% block page_class %}
     event
 {% endblock %}
@@ -30,6 +38,7 @@
         <h1 class="dotted">{{ event.title }}</h1>
     {% endeditable %}
     {% if event.sub_title %}
+        <div class="navbar-start"></div>
         {% editable event.sub_title %}
             <div class="chapo">
                 {{ event.sub_title }}
@@ -59,6 +68,7 @@
 
 {% block page_content %}
     {% block event_detail_content %}
+        <div class="navbar-start"></div>
         {% if event.content %}
             {% editable event.content %}
                 {{ event.content|richtext_filters|ytb_iframe|safe }}

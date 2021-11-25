@@ -32,7 +32,7 @@
 
 	.page__sidebar{
 		position: absolute;
-		width: 250px;
+		width: 260px;
 		z-index: 1;
 	}
 
@@ -48,9 +48,16 @@
 		width: 85%;
 	}
 	.page__sidebar{
-		width: 230px;
+		width: 222px;
 	}
 }
+
+@media screen and (max-width: 1071px){
+	.page__sidebar{
+		padding-right:30px;
+	}
+}
+
 
 @media screen and (max-width: 971px){
 	.event_list_title{

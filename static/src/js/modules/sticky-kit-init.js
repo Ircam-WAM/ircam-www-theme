@@ -15,17 +15,39 @@ StickyKitInit.prototype.init = function() {
     if(sidebar.length > 0 && content.length > 0){
         sidebar = sidebar[0]
         content = content[0]
+        var start_sidebar = content.querySelector(".navbar-start")
+        var end_sidebar = content.querySelector(".navbar-end")
         var sliders = content.getElementsByClassName("page__slider")
+        var topPosition = "auto"
+        setTimeout(function(){
+            if(start_sidebar){
+                topPosition = (start_sidebar.getBoundingClientRect().top + window.scrollY) + 'px'
+                sidebar.style.top = topPosition
+            }
+        }, 30)
         document.addEventListener("scroll", function(){
             if(window.innerWidth >= 972){
 
                 var sidebar_rect = sidebar.getBoundingClientRect()
                 var content_rect = content.getBoundingClientRect()
-                if(content_rect.top < 100){
-                    var dist = Math.round(content_rect.bottom - sidebar_rect.bottom)
+                var start = null
+                if (start_sidebar) {
+                    start = start_sidebar.getBoundingClientRect().top
+                }else{
+                    start = content_rect.top
+                }
+                var end = null
+                if (end_sidebar) {
+                    end = end_sidebar.getBoundingClientRect().bottom
+                }else{
+                    end = content_rect.bottom
+                }
+
+                if(start < 100){
+                    var dist = Math.round(end - sidebar_rect.bottom)
                     if(
                         (
-                            Math.round(content_rect.bottom - sidebar_rect.bottom) > 10
+                            Math.round(end - sidebar_rect.bottom) > 10
                         ) || (
                             sidebar_rect.top > 100 && dist > -5 && dist < 5
                         )
@@ -36,12 +58,12 @@ StickyKitInit.prototype.init = function() {
                     }else{
                         position = "absolute"
                         sidebar.style.position = position
-                        sidebar.style.top = (window.scrollY + content_rect.bottom - sidebar.clientHeight) + "px"
+                        sidebar.style.top = (window.scrollY + end - sidebar.clientHeight) + "px"
                     }
                 }else{
                     position = "absolute"
                     sidebar.style.position = position
-                    sidebar.style.top = "auto"
+                    sidebar.style.top = topPosition
                 }
                 for(var s in sliders){
                     if(typeof sliders[s] == "object"){
