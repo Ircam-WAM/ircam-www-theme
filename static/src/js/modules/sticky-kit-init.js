@@ -20,14 +20,13 @@ StickyKitInit.prototype.init = function() {
         var sliders = content.getElementsByClassName("page__slider")
         var topPosition = "auto"
         setTimeout(function(){
-            if(start_sidebar){
-                topPosition = (start_sidebar.getBoundingClientRect().top + window.scrollY) + 'px'
-                sidebar.style.top = topPosition
-            }
             handleScroll()
         }, 30)
 
         function handleScroll(){
+            if(start_sidebar){
+                topPosition = (start_sidebar.getBoundingClientRect().top + window.scrollY) + 'px'
+            }
             if(window.innerWidth >= 972){
 
                 var sidebar_rect = sidebar.getBoundingClientRect()

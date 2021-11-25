@@ -54,6 +54,7 @@
 
     {% if page.projecttopicpage.sub_title %}
         {% editable page.projecttopicpage.sub_title %}
+            <div class="navbar-start"></div>
             <div class="chapo">
                 {{ page.projecttopicpage.sub_title }}
             </div>
@@ -62,6 +63,7 @@
 
     {% with page.projecttopicpage.project_topic as topic %}
         {% for sub_topic in topic|sub_topics %}
+            <div class="navbar-start" style="position:relative;top:24px"></div>
             <h2 class="dotted">{{ sub_topic.name }}</h2>
             {% if sub_topic.description %}
                 <p>
@@ -83,6 +85,7 @@
 
                         </div>
                     {% endfor %}
+                    <div class="navbar-end"></div>
                 </div>
             {% endif %}
         {% endfor %}

@@ -59,6 +59,7 @@
 
     {% if object.project.description %}
         {% editable object.project.description %}
+            <div class="navbar-start">
             <div class="chapo">
                 {{ object.project.description|safe }}
             </div>
@@ -69,6 +70,7 @@
 
 {% block page_content %}
     {% if object.content %}
+        <div class="navbar-start">
         {% editable object.content %}
             {{ object.content|richtext_filters|safe }}
         {% endeditable %}
