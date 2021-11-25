@@ -24,8 +24,8 @@
 {% block main %}
 
     <div class="page page--{% spaceless %}{% block page_class %}{% endblock %}{% endspaceless %}">
-
-        <div class="container page__sidebar_container">
+        {% if page.custompage.display_navbar %} sidebar_hidden{% endif %}
+        <div class="container page__sidebar_container{% if not page.custompage.display_navbar %} sidebar_hidden{% endif %}">
             <div class="row">
                 <div class="col-sm-3 col-lg-2 page__sidebar">
                     <div class="nav-tree-wrapper">
