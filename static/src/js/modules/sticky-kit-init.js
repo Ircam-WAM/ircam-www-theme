@@ -24,8 +24,10 @@ StickyKitInit.prototype.init = function() {
                 topPosition = (start_sidebar.getBoundingClientRect().top + window.scrollY) + 'px'
                 sidebar.style.top = topPosition
             }
+            handleScroll()
         }, 30)
-        document.addEventListener("scroll", function(){
+
+        function handleScroll(){
             if(window.innerWidth >= 972){
 
                 var sidebar_rect = sidebar.getBoundingClientRect()
@@ -87,7 +89,10 @@ StickyKitInit.prototype.init = function() {
                     }
                 }
             }
-        })
+        }
+
+        document.addEventListener("scroll", handleScroll)
+
         window.addEventListener("resize", function(){
             if(window.innerWidth < 972){
                 sidebar.style.position = "static"
