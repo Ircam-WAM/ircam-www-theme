@@ -20,13 +20,9 @@
 
 @import "home";
 
-#iframe_wrapper #content{
-	overflow: visible;
-}
-
 #iframe_wrapper{
 	iframe{
-		top: -60px;
+		top: -100px;
 	}
 	position: relative;
 	height: 1000px;
