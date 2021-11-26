@@ -16,7 +16,7 @@ StickyKitInit.prototype.init = function() {
         sidebar = sidebar[0]
         content = content[0]
         var start_sidebar = content.querySelector(".navbar-start")
-        var end_sidebar = content.querySelector(".navbar-end")
+        var end_sidebar = content.querySelector(".navbar-end:last-of-type")
         var sliders = content.getElementsByClassName("page__slider")
         var topPosition = "auto"
         setTimeout(function(){

@@ -70,11 +70,10 @@
             {% endif %}
         {% endif %}
 
-        {% if page.get_ascendants|length == 1 %}
-            {% children_pages page.id as childrens %}
-            {% if childrens %}
+        {% if page_depth == 1 or page_depth == 0 %}
+            {% if children %}
                 <div class="page__childrens">
-                    {% for child in childrens %}
+                    {% for child in children %}
                         {% if child.in_menus.0 %}
                           {% with child as object %}
                             {% include "pages/page/includes/page_box.html" %}
@@ -82,6 +81,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
+                <div class="navbar-end"></div>
             {% endif %}
         {% endif %}
 

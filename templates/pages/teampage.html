@@ -40,15 +40,24 @@
      {% endeditable %}
     {% endif %}
 
-    {% if page.get_ascendants|length == 1 %}
-        {% children_pages page.id as childrens %}
-        {% if childrens %}
+    {% if page_depth == 0 or page_depth == 1 %}
+        {% if children %}
             <div class="page__childrens">
                 {% for children in childrens %}
                     {% with children as object %}
                         {% include "pages/page/includes/page_box.html" %}
                     {% endwith %}
                 {% endfor %}
+            </div>
+            <div class="navbar-end"></div>
+        {% endif %}
+    {% endif %}
+
+    {% if page.get_ascendants|length == 1 %}
+        {% children_pages page.id as childrens %}
+        {% if childrens %}
+            <div class="page__childrens">
+
             </div>
         {% endif %}
     {% endif %}
