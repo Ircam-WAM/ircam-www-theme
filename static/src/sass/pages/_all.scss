@@ -20,6 +20,18 @@
 
 @import "home";
 
+#iframe_wrapper #content{
+	overflow: visible;
+}
+
+#iframe_wrapper{
+	top: -60px;
+	position: relative;
+	height: 1000px;
+	width: 975px;
+	max-width: 100vw;
+}
+
 @media screen and (min-width: 972px){
 	.related_content_block{
 		margin-left: 25%;
@@ -54,6 +66,12 @@
 	.page__sidebar{
 		width: 222px;
 	}
+	#iframe_wrapper{
+		overflow: hidden;
+		iframe{
+			width=122%;
+		}
+	}
 }
 
 @media screen and (max-width: 1071px){
@@ -62,6 +80,14 @@
 	}
 }
 
+@media screen and (min-width: 972px) and (max-width: 1371px){
+	#iframe_wrapper{
+		overflow: hidden;
+		iframe{
+			width=115%;
+		}
+	}
+}
 
 @media screen and (max-width: 971px){
 	.event_list_title{
@@ -73,6 +99,13 @@
 	}
 	.page__sidebar{
 		position: static !important;
+	}
+
+	#iframe_wrapper{
+		overflow: scroll;
+		iframe{
+			width=160%;
+		}
 	}
 
 }
