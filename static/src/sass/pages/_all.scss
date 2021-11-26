@@ -25,7 +25,9 @@
 }
 
 #iframe_wrapper{
-	top: -60px;
+	iframe{
+		top: -60px;
+	}
 	position: relative;
 	height: 1000px;
 	width: 975px;
@@ -69,7 +71,7 @@
 	#iframe_wrapper{
 		overflow: hidden;
 		iframe{
-			width=122%;
+			width:122%;
 		}
 	}
 }
@@ -84,7 +86,7 @@
 	#iframe_wrapper{
 		overflow: hidden;
 		iframe{
-			width=115%;
+			width:115%;
 		}
 	}
 }
@@ -104,7 +106,7 @@
 	#iframe_wrapper{
 		overflow: scroll;
 		iframe{
-			width=160%;
+			width:160%;
 		}
 	}
 
