@@ -66,6 +66,7 @@
 	}
 	#iframe_wrapper{
 		overflow: hidden;
+		height: 430px;
 		iframe{
 			width:122%;
 		}
@@ -81,6 +82,7 @@
 @media screen and (min-width: 972px) and (max-width: 1371px){
 	#iframe_wrapper{
 		overflow: hidden;
+		height: 700px;
 		iframe{
 			width:115%;
 		}
@@ -101,6 +103,7 @@
 
 	#iframe_wrapper{
 		overflow: scroll;
+		height: 500px;
 		iframe{
 			width:160%;
 		}
