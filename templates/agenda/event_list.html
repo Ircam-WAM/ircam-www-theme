@@ -1,5 +1,5 @@
 {% extends "pages/page.html" %}
-{% load i18n mezzanine_tags event_tags keyword_tags disqus_tags organization_tags static pages_tags %}
+{% load i18n mezzanine_tags utils_tags event_tags keyword_tags disqus_tags organization_tags static pages_tags %}
 
 {% block meta_title %}
     {% if page %}
@@ -102,7 +102,7 @@
                             <div class="navbar-start"></div>
                             {% if ordered_by_month %}
                                 {% for month, events in events.items %}
-                                    <div id="{{month|slugify}}">
+                                    <div id="{{month|before_comma|slugify}}">
                                         {% for event in events %}
                                             {% include 'agenda/event/includes/event_linecard.html' %}
                                         {% endfor %}
