@@ -15,9 +15,10 @@ StickyKitInit.prototype.init = function() {
     if(sidebar.length > 0 && content.length > 0){
         sidebar = sidebar[0]
         content = content[0]
-        var start_sidebar = content.querySelector(".navbar-start")
-        var end_sidebar = content.querySelector(".navbar-end:last-of-type")
-        var sliders = content.getElementsByClassName("page__slider")
+        var start_sidebar = document.querySelector(".navbar-start")
+        var ends = document.getElementsByClassName("navbar-end")
+        var end_sidebar = ends[ends.length - 1]  // last navbar-end div is used
+        var sliders = document.getElementsByClassName("page__slider")
         var topPosition = "auto"
         setTimeout(function(){
             handleScroll()
@@ -69,6 +70,12 @@ StickyKitInit.prototype.init = function() {
                 for(var s in sliders){
                     if(typeof sliders[s] == "object"){
                         var rect = sliders[s].getBoundingClientRect()
+                        console.log(sidebar_rect.bottom, rect.top, rect.bottom)
+                        console.log(
+                            sidebar_rect.bottom - rect.top > 0,
+                            sidebar_rect.bottom - rect.bottom < 0
+                        )
+                        console.log()
                         if(
                             (
                                 sidebar_rect.bottom - rect.top > 0 &&
@@ -81,13 +88,14 @@ StickyKitInit.prototype.init = function() {
                                 sidebar_rect.bottom > rect.bottom
                             )
                         ){
-                            sidebar.querySelector("ul").classList.add("faded")
+                            sidebar.querySelector(".nav-tree-wrapper").classList.add("faded")
                         }else{
-                            sidebar.querySelector("ul").classList.remove("faded")
+                            sidebar.querySelector(".nav-tree-wrapper").classList.remove("faded")
                         }
                     }
                 }
             }
+            sidebar.style.visibility = 'visible'
         }
 
         document.addEventListener("scroll", handleScroll)

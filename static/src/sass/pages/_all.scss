@@ -31,6 +31,10 @@
 	overflow-x: scroll;
 }
 
+.page__sidebar{
+	visibility: hidden;
+}
+
 @media screen and (min-width: 972px){
 	.related_content_block{
 		margin-left: 25%;
@@ -48,7 +52,7 @@
 	}
 
 	.sidebar_hidden{
-		visibility: hidden;
+		visibility: hidden !important;
 	}
 
 }

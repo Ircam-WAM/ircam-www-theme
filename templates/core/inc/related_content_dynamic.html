@@ -1,6 +1,7 @@
 {% load i18n mezzanine_tags keyword_tags organization_tags pages_tags %}
 {% if concrete_objects %}
     <div class="white-bg pb2">
+        {% if not nav %}<div style="position:relative;top:-3rem" class="navbar-end"></div>{% endif %}
         <div class="container">
             <div class="row tac">
                 <div class="col-xs-12 {% if nav %}related_content_block_title{% endif %}">
@@ -36,5 +37,6 @@
                 {% endfor %}
             </div>
         </div>
+        {% if nav %}<div class="navbar-end"></div>{% endif %}
     </div>
 {% endif %}

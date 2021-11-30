@@ -52,16 +52,6 @@
             <div class="navbar-end"></div>
         {% endif %}
     {% endif %}
-
-    {% if page.get_ascendants|length == 1 %}
-        {% children_pages page.id as childrens %}
-        {% if childrens %}
-            <div class="page__childrens">
-
-            </div>
-        {% endif %}
-    {% endif %}
-
 {% endblock %}
 
 {% block page_slider %}

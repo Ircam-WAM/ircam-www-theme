@@ -20,6 +20,13 @@
 
 $module: ".nav-tree";
 
+
+.faded {
+    opacity: 0;
+    @include transition(opacity 0.10s ease-in-out, transform 0.10s ease-in-out);
+    @include transform(translateX(-20px));
+}
+
 #{$module} {
 
     padding: 0;
@@ -53,12 +60,6 @@ $module: ".nav-tree";
     opacity: 1;
     @include transition(opacity 0.10s ease-in-out, transform 0.10s ease-in-out);
     @include transform(translateX(0));
-
-    &.faded {
-        opacity: 0;
-        @include transition(opacity 0.10s ease-in-out, transform 0.10s ease-in-out);
-        @include transform(translateX(-20px));
-    }
 
     &.is_stuck {
         background: white;
