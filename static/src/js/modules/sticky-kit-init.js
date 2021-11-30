@@ -15,9 +15,32 @@ StickyKitInit.prototype.init = function() {
     if(sidebar.length > 0 && content.length > 0){
         sidebar = sidebar[0]
         content = content[0]
-        var start_sidebar = document.querySelector(".navbar-start")
+        var start_sidebar = null
+        var starts = document.getElementsByClassName("navbar-start")
+        var start_min = null
+        for(var s in starts){
+            if(typeof starts[s] == "object"){
+                var top = starts[s].getBoundingClientRect().top
+                if(start_min == null || top < start_min){
+                    start_min = top
+                    start_sidebar = starts[s]
+                }
+            }
+        }
+        var end_sidebar = null
         var ends = document.getElementsByClassName("navbar-end")
-        var end_sidebar = ends[ends.length - 1]  // last navbar-end div is used
+        var end_max = null
+        for(var e in ends){
+            if(typeof ends[e] == "object"){
+                var top = ends[e].getBoundingClientRect().top
+                if(end_max == null || top > end_max){
+                    end_max = top
+                    end_sidebar = ends[e]
+                }
+            }
+        }
+        // var ends = document.getElementsByClassName("navbar-end")
+        // var end_sidebar = ends[ends.length - 1]  // last navbar-end div is used
         var sliders = document.getElementsByClassName("page__slider")
         var topPosition = "auto"
         setTimeout(function(){

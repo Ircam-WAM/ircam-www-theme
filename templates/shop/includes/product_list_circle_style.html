@@ -17,6 +17,7 @@
             </div>
         </div>
 
+        <div class="navbar-start"></div>
         <div class="container-fluid">
             <div class="row tac">
                 {% for product_inline in list.products.all %}
@@ -48,6 +49,7 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="navbar-end"></div>
         {% if separator_after == True or separator_after == '1' or separator_after == None %}
             <hr class="mt0" />
         {% endif %}
