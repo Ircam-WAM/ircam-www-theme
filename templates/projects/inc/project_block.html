@@ -8,10 +8,12 @@
                 {% endif %}
                 <div class="page__block{% if block.background_color %} page__block--{{ block.background_color }}{% endif %}">
                     <div class="container">
-                        <div class="row" data-summary-content>
+                        <div class="row">
                             <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
                                 {% editable block.title %}
-                                    <h2 class="dotted">{{ block.title }}</h2>
+                                {% language "fr" %}
+                                    <h2 class="dotted" id="{{block.title|slugify}}">{{ block.title }}</h2>
+                                {% endlanguage %}
                                 {% endeditable %}
                                 {% if block.description %}
                                     <div class="chapo">
