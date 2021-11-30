@@ -51,7 +51,7 @@
 		z-index: 1;
 	}
 
-	.sidebar_hidden{
+	.sidebar_hidden, .sidebar_hidden *{
 		visibility: hidden !important;
 	}
 
