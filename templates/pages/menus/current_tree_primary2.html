@@ -17,9 +17,15 @@
                 {% else %}
                     <ul class="nav-tree">
                         {% for subpage in page %}
-                            <li class="nav-tree__item nav-tree__item--sub">
-                                 <a class="nav-tree__link nav-tree__link--sub {{ subpage.extra_class }} nav-page-link" href="{{ subpage.get_absolute_url }}">{{ subpage.title }}</a>
-                            </li>
+                            {% if subpage|is_dict %}
+                                <li class="nav-tree__item nav-tree__item--sub">
+                                    <a class="nav-tree__link nav-tree__link--sub {{ subpage.extra_class }} nav-page-link" href="#{{subpage.href}}">{{subpage.text}}</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-tree__item nav-tree__item--sub">
+                                     <a class="nav-tree__link nav-tree__link--sub {{ subpage.extra_class }} nav-page-link" href="{{ subpage.get_absolute_url }}">{{ subpage.title }}</a>
+                                </li>
+                            {% endif %}
                         {% endfor %}
                     </ul>
                 {% endif %}
