@@ -31,11 +31,9 @@
                             {% block page_sidebar %}
                                 {% if page.get_ascendants|length < 2 %}
                                     {% include "pages/menus/current_tree_primary2.html" %}
-                                    {# page_menu "pages/menus/current_tree_primary.html" #}
                                 {% endif %}
                                 {% if page.get_ascendants|length >= 2 %}
                                     {% include "pages/menus/current_tree_secondary2.html" %}
-                                    {# page_menu "pages/menus/current_tree_secondary.html" #}
                                 {% endif %}
                             {% endblock %}
                         </div>
@@ -166,7 +164,7 @@
                             <div class="container">
                                 <div class="row" data-summary-content>
                                     <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2">
-                                        <ul class="partners-list">
+                                        <ul id="partenaires" class="partners-list">
                                             {% include 'core/inc/logo.html' %}
                                         </ul>
                                     </div>
