@@ -146,9 +146,12 @@
 {% block page_sub_content %}
 
     {% if object.project.type == 'external' %}
+</div>
+    </div>
+    <div>
         <div class="white-bg pb2">
             <hr class="mt0 invisible" />
-            <div class="page__block page__block--yellow">
+            <div id="details" class="page__block page__block--yellow page__slider">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 col-lg-10 col-lg-push-1">
@@ -295,6 +298,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="navbar-end"></div>
     {% endif %}
 
     {% with object.blocks.all as blocks %}
@@ -370,6 +375,7 @@
                 </div>
             </div>
         </div>
+        <div class="navbar-end"></div>
     {% endif %}
 {% endblock %}
 
