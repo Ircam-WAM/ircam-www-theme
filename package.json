@@ -16,7 +16,7 @@
     "lightslider": "^1.1.6",
     "pushy": "^1.0.0",
     "sticky-kit": "^1.1.2",
-    "video.js": "^5.12.5",
+    "video.js": "^7.14.3",
     "videojs-playlist": "^2.4.0",
     "waypoints": "^4.0.1"
   }
