@@ -92,6 +92,7 @@ StickyKitInit.prototype.init = function() {
                 }
                 for(var s in sliders){
                     if(typeof sliders[s] == "object"){
+                        var rect = sliders[s].getBoundingClientRect()
                         if(
                             (
                                 sidebar_rect.bottom - rect.top > 0 &&
