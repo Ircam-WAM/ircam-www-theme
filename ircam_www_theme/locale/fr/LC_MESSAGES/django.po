@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-30 15:11+0200\n"
+"POT-Creation-Date: 2021-12-30 16:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,1071 +18,303 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ircam_www_theme/templates/accounts/account_form.html:5
-#: ircam_www_theme/templates/accounts/account_form.html:9
-#: ircam_www_theme/templates/accounts/account_login.html:13
-#: ircam_www_theme/templates/projects/inc/project_block.html:26
-#: ircam_www_theme/templates/projects/project_blogpage_detail.html:59
-msgid "Login"
+#: settings.py:105
+msgid "French"
 msgstr ""
 
-#: ircam_www_theme/templates/accounts/account_login.html:5
-#: ircam_www_theme/templates/errors/403.html:6
-#: ircam_www_theme/templates/errors/404.html:6
-#: ircam_www_theme/templates/errors/404.html:14
-msgid "Page not found"
+#: settings.py:106
+msgid "English"
 msgstr ""
 
-#: ircam_www_theme/templates/accounts/account_login.html:18
-msgid ""
-"You're already logged in. If you'd like to log in as a different user, "
-"you'll need to log out first."
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_login.html:25
-#, python-format
-msgid ""
-"<p>You can also <a href=\"%(password_reset_url)s?next=%(profile_update_url)s"
-"\">reset your password</a> if you've forgotten it.</p>"
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_password_reset.html:9
-msgid ""
-"Enter your username or email address and you'll receive an email with a link "
-"you need to click, in order to log in and change your password."
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_profile.html:18
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:12
-msgid "Update profile"
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_signup.html:7
-msgid ""
-"You're already logged in. If you'd like to create a new account, you'll need "
-"to log out first."
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_signup.html:11
-msgid ""
-"After signing up, your account will be reviewed for approval. You'll receive "
-"an email when your account is activated."
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/account_signup.html:13
-msgid ""
-"After signing up, you'll receive an email with a link you need to click, in "
-"order to activate your account."
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:5
-msgid "Logged in as: "
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:20
-#: ircam_www_theme/templates/accounts/includes/user_panel_nav.html:11
-#: ircam_www_theme/templates/includes/editable_toolbar.html:7
-msgid "Log out"
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:27
-#: ircam_www_theme/templates/accounts/includes/user_panel_nav.html:14
-msgid "Log in"
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:30
-msgid "or"
-msgstr ""
-
-#: ircam_www_theme/templates/accounts/includes/user_panel.html:33
-#: ircam_www_theme/templates/accounts/includes/user_panel_nav.html:16
-msgid "Sign up"
-msgstr ""
-
-#: ircam_www_theme/templates/agenda/event/includes/event_date_line.html:10
-#: ircam_www_theme/templates/job/candidacy/candidacy_detail.html:30
-#: ircam_www_theme/templates/job/inc/candidacy_card.html:25
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:78
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:82
-msgid "to"
-msgstr "au"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_date_slider.html:31
-#: ircam_www_theme/templates/agenda/event/includes/event_date_slider.html:47
-#: ircam_www_theme/templates/agenda/event/includes/event_dates.html:35
-msgid "and"
-msgstr "et"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_date_slider.html:45
-#: ircam_www_theme/templates/agenda/event/includes/event_date_slider.html:52
-msgid "through"
-msgstr "au"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_location.html:7
-msgid "Room"
-msgstr "Salle"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_location.html:13
-msgid "Click to get the interactive map"
-msgstr "Cliquer pour voir la carte interactive"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_location.html:15
-#: ircam_www_theme/templates/agenda/event_location_detail.html:40
-msgid "Viewing events for the location"
-msgstr "Événements du lieu"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_metainfo.html:23
-msgid "Language"
-msgstr "Langue"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_metainfo.html:30
-msgid "Level"
-msgstr "Niveau"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_metainfo.html:36
-#: ircam_www_theme/templates/core/inc/files.html:3
-msgid "Downloads"
-msgstr "Téléchargements"
-
-#: ircam_www_theme/templates/agenda/event/includes/event_metainfo.html:49
-msgid "Prices"
-msgstr "Prix"
-
-#: ircam_www_theme/templates/agenda/event/includes/filter_panel.html:6
-msgid "Upcoming Events"
-msgstr "Événements à venir"
-
-#: ircam_www_theme/templates/agenda/event/includes/filter_panel.html:22
-msgid "Recent Events"
-msgstr "Événements récents"
-
-#: ircam_www_theme/templates/agenda/event/includes/filter_panel.html:38
-msgid "Archive"
-msgstr "Archive"
-
-#: ircam_www_theme/templates/agenda/event/includes/filter_panel.html:58
-#: ircam_www_theme/templates/agenda/event_location_list.html:4
-#: ircam_www_theme/templates/agenda/event_location_list.html:19
-#: ircam_www_theme/templates/agenda/event_location_list.html:28
-msgid "Locations"
-msgstr "Lieux"
-
-#: ircam_www_theme/templates/agenda/event/includes/filter_panel.html:74
-msgid "Tags"
-msgstr "Mots clés"
-
-#: ircam_www_theme/templates/agenda/event_booking_confirmation.html:4
-#: ircam_www_theme/templates/agenda/event_booking_confirmation.html:12
-msgid "Confirmation"
-msgstr "Confirmation"
-
-#: ircam_www_theme/templates/agenda/event_list.html:8
-#: ircam_www_theme/templates/agenda/event_list.html:29
-#: ircam_www_theme/templates/agenda/event_list.html:67
-#: ircam_www_theme/templates/agenda/event_list.html:124
-msgid "Rendez-vous in Paris"
-msgstr "Rendez-vous à Paris"
-
-#: ircam_www_theme/templates/agenda/event_list.html:44
-#: ircam_www_theme/templates/agenda/event_list.html:58
-#: ircam_www_theme/templates/agenda/event_list.html:115
-msgid "On tour"
-msgstr "En tournées"
-
-#: ircam_www_theme/templates/agenda/event_list.html:46
-msgid "Archives"
-msgstr "Archives"
-
-#: ircam_www_theme/templates/core/admin/base_site.html:20
-msgid "View site"
-msgstr ""
-
-#: ircam_www_theme/templates/core/inc/facebook_meta.html:3
-#, python-format
-msgid "%(title)s"
-msgstr ""
-
-#: ircam_www_theme/templates/core/inc/related_content_dynamic.html:7
-msgid "Also discover"
-msgstr "À découvrir aussi"
-
-#: ircam_www_theme/templates/email/account_approve.html:3
-#: ircam_www_theme/templates/email/account_approve.txt:3
-msgid "Hey there, a new account has been created and requires activation."
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approve.html:5
-#: ircam_www_theme/templates/email/account_approve.txt:5
-msgid "Name"
-msgstr "Nom"
-
-#: ircam_www_theme/templates/email/account_approve.html:6
-#: ircam_www_theme/templates/email/account_approve.txt:6
-#: ircam_www_theme/templates/network/person_dashboard.html:36
-#: ircam_www_theme/templates/network/person_detail.html:36
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:34
-msgid "Email"
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approve.html:11
-#: ircam_www_theme/templates/email/account_approve.txt:9
-#: ircam_www_theme/templates/email/signup_verify.html:4
-#: ircam_www_theme/templates/email/signup_verify.txt:4
-msgid "Please use the link below to activate it."
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approve_subject.txt:2
-msgid "An account requires activation"
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approved.html:3
-#: ircam_www_theme/templates/email/account_approved.txt:3
-msgid "Hey there, your account has been activated."
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approved.html:4
-#: ircam_www_theme/templates/email/account_approved.txt:4
-msgid "Please use the link below to log in."
-msgstr ""
-
-#: ircam_www_theme/templates/email/account_approved_subject.txt:2
-msgid "Your account has been activated"
-msgstr ""
-
-#: ircam_www_theme/templates/email/comment_notification.html:6
-msgid "A new comment has been posted on"
-msgstr ""
-
-#: ircam_www_theme/templates/email/comment_notification.html:10
-#, python-format
-msgid ""
-"\n"
-"    At %(submit_date)s %(user_name)s wrote:\n"
-"    "
-msgstr ""
-
-#: ircam_www_theme/templates/email/comment_notification.txt:7
-#, python-format
-msgid ""
-"\n"
-"At %(submit_date)s %(user_name)s wrote:\n"
-msgstr ""
-
-#: ircam_www_theme/templates/email/password_reset_verify.html:3
-#: ircam_www_theme/templates/email/password_reset_verify.txt:3
-msgid "Hey there, the password reset form was used for your account."
-msgstr ""
-
-#: ircam_www_theme/templates/email/password_reset_verify.html:4
-#: ircam_www_theme/templates/email/password_reset_verify.txt:4
-msgid "Please use the link below to log in and update your password."
-msgstr ""
-
-#: ircam_www_theme/templates/email/password_reset_verify.html:6
-#: ircam_www_theme/templates/email/password_reset_verify.txt:6
-msgid ""
-"If you didn't request for your password to be reset, please ignore this "
-"email."
-msgstr ""
-
-#: ircam_www_theme/templates/email/password_reset_verify_subject.txt:2
-msgid "Reset your password"
-msgstr ""
-
-#: ircam_www_theme/templates/email/signup_verify.html:3
-#: ircam_www_theme/templates/email/signup_verify.txt:3
-msgid "Hey there, thanks for creating your account."
-msgstr ""
-
-#: ircam_www_theme/templates/email/signup_verify_subject.txt:2
-msgid "Activate your account"
-msgstr ""
-
-#: ircam_www_theme/templates/errors/403.html:14
-msgid "Permission denied"
-msgstr ""
-
-#: ircam_www_theme/templates/errors/403.html:19
-msgid "You are not allowed to access this page."
-msgstr ""
-
-#: ircam_www_theme/templates/errors/404.html:19
-msgid "The page you requested does not exist."
-msgstr ""
-
-#: ircam_www_theme/templates/errors/500.html:6
-#: ircam_www_theme/templates/errors/500.html:10
-#: ircam_www_theme/templates/errors/500.html:15
-#: ircam_www_theme/templates/errors/500.html:25
-msgid "Error"
-msgstr ""
-
-#: ircam_www_theme/templates/errors/500.html:16
-#: ircam_www_theme/templates/errors/500.html:30
-msgid "Sorry, an error occurred."
-msgstr "Une erreur s'est produite."
-
-#: ircam_www_theme/templates/generic/includes/comment.html:22
-#: ircam_www_theme/templates/generic/includes/comment.html:59
-#: ircam_www_theme/templates/twitter/tweets.html:19
-#, python-format
-msgid "%(sometime)s ago"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comment.html:30
-msgid "Link"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comment.html:33
-#: ircam_www_theme/templates/generic/includes/comment.html:49
-msgid "Reply"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comment.html:55
-msgid "Comment deleted"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comment.html:57
-msgid "Comment awaiting approval"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comment.html:71
-msgid "There are currently no comments"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comments.html:3
-msgid "Comments"
-msgstr "Commentaires"
-
-#: ircam_www_theme/templates/generic/includes/comments.html:17
-msgid "New Comment"
-msgstr ""
-
-#: ircam_www_theme/templates/generic/includes/comments.html:25
-msgid "Comment"
-msgstr ""
-
-#: ircam_www_theme/templates/home/inc/slider.html:20
-#: ircam_www_theme/templates/magazine/article/article_detail.html:44
-#: ircam_www_theme/templates/magazine/article/article_list.html:8
-#: ircam_www_theme/templates/magazine/article/article_list.html:30
-#: ircam_www_theme/templates/magazine/article/includes/article_card.html:27
-msgid "News"
-msgstr "Actualité"
-
-#: ircam_www_theme/templates/includes/editable_form.html:16
-msgid "Save"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/editable_form.html:17
-msgid "Cancel"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/editable_form.html:25
-msgid "Edit"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/editable_toolbar.html:6
-msgid "Admin"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/footer.html:8
-msgid "Subscribe to our newsletter"
-msgstr "Inscription à la newsletter"
-
-#: ircam_www_theme/templates/includes/footer.html:12
-msgid "Follow us on"
-msgstr "Suivez-nous sur"
-
-#: ircam_www_theme/templates/includes/footer.html:23
-#: ircam_www_theme/templates/index.html:5
-#: ircam_www_theme/templates/index.html:15
-#: ircam_www_theme/templates/pages/menus/breadcrumb.html:4
-#: ircam_www_theme/templates/pages/menus/breadcrumb.html:10
-#: ircam_www_theme/templates/pages/menus/breadcrumb_event.html:6
-#: ircam_www_theme/templates/pages/menus/current_tree_secondary.html:31
-#: ircam_www_theme/templates/pages/menus/dropdown.html:11
-#: ircam_www_theme/templates/pages/menus/footer_tree.html:11
-#: ircam_www_theme/templates/pages/menus/header.html:15
-#: ircam_www_theme/templates/pages/menus/mobile.html:10
-#: ircam_www_theme/templates/pages/menus/primary.html:8
-#: ircam_www_theme/templates/projects/project/project_detail.html:82
-#: ircam_www_theme/templates/search_results.html:13
-msgid "Home"
-msgstr "Accueil"
-
-#: ircam_www_theme/templates/includes/footer.html:41
-msgid "Opening times"
-msgstr "Horaires d'ouverture"
-
-#: ircam_www_theme/templates/includes/footer.html:46
-msgid "Subway access"
-msgstr "Accès en transports"
-
-#: ircam_www_theme/templates/includes/footer.html:72
-msgid "go to"
-msgstr "Aller vers"
-
-#: ircam_www_theme/templates/includes/footer.html:90
-msgid "All rights reserved"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/form_errors.html:8
-msgid "Please correct the errors below."
-msgstr ""
-
-#: ircam_www_theme/templates/includes/language_selector.html:17
-msgid "Change"
-msgstr ""
-
-#: ircam_www_theme/templates/includes/pagination.html:12
-msgid "Previous page"
-msgstr "Page précédente"
-
-#: ircam_www_theme/templates/includes/pagination.html:26
-msgid "Next page"
-msgstr "Page suivante"
-
-#: ircam_www_theme/templates/includes/search_form.html:12
-#: ircam_www_theme/templates/search_results.html:27
-msgid "Type something"
-msgstr "Recherche"
-
-#: ircam_www_theme/templates/includes/share_buttons.html:5
-msgid "Share on Facebook"
-msgstr "Partagez sur Facebook"
-
-#: ircam_www_theme/templates/includes/share_buttons.html:8
-msgid "Share on Twitter"
-msgstr "Partagez sur Twitter"
-
-#: ircam_www_theme/templates/includes/share_buttons.html:11
-msgid "Share by email"
-msgstr "Partager par email"
-
-#: ircam_www_theme/templates/includes/share_buttons.html:14
-msgid "Print this page"
-msgstr "Imprimer cette page"
-
-#: ircam_www_theme/templates/includes/share_buttons.html:18
-#: ircam_www_theme/templates/includes/share_buttons.html:23
-msgid "Add to"
-msgstr "Ajouter à"
-
-#: ircam_www_theme/templates/includes/sidebar.html:10
-#: ircam_www_theme/templates/index.html:30
-#: ircam_www_theme/templates/magazine/topic/topic_detail.html:5
-#: ircam_www_theme/templates/magazine/topic/topic_detail.html:34
-msgid "Magazine"
-msgstr "Magazine"
-
-#: ircam_www_theme/templates/includes/sidebar.html:14
-msgid "Medias"
-msgstr "Medias"
-
-#: ircam_www_theme/templates/index.html:31
-#: ircam_www_theme/templates/index.html:39
-msgid "all articles"
-msgstr "tous les articles"
-
-#: ircam_www_theme/templates/job/candidacy/candidacy_detail.html:28
-#: ircam_www_theme/templates/job/candidacy/candidacy_list.html:4
-msgid "Candidacies"
-msgstr "Candidatures"
-
-#: ircam_www_theme/templates/job/candidacy/candidacy_detail.html:30
-#: ircam_www_theme/templates/job/candidacy/candidacy_detail.html:32
-#: ircam_www_theme/templates/job/inc/candidacy_card.html:25
-#: ircam_www_theme/templates/job/inc/candidacy_card.html:27
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:80
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:82
-msgid "from"
-msgstr "du"
-
-#: ircam_www_theme/templates/job/candidacy/candidacy_detail.html:34
-#: ircam_www_theme/templates/job/inc/candidacy_card.html:29
-#: ircam_www_theme/templates/job/inc/job_offer_card.html:28
-#: ircam_www_theme/templates/job/offer/job_offer_detail.html:37
-msgid "until"
-msgstr "jusqu'au"
-
-#: ircam_www_theme/templates/job/candidacy/candidacy_list.html:11
-#: ircam_www_theme/templates/job/candidacy/candidacy_list.html:18
-#: ircam_www_theme/templates/job/candidacy/candidacy_list.html:27
-msgid "Apply"
-msgstr "Candidatures"
-
-#: ircam_www_theme/templates/job/candidacy/candidacy_list.html:42
-msgid "Please come back later. There is no candidacy at the moment."
-msgstr ""
-"Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
-
-#: ircam_www_theme/templates/job/inc/candidacy_card.html:23
+#~ msgid "to"
+#~ msgstr "au"
+
+#~ msgid "and"
+#~ msgstr "et"
+
+#~ msgid "through"
+#~ msgstr "au"
+
+#~ msgid "Room"
+#~ msgstr "Salle"
+
+#~ msgid "Click to get the interactive map"
+#~ msgstr "Cliquer pour voir la carte interactive"
+
+#~ msgid "Viewing events for the location"
+#~ msgstr "Événements du lieu"
+
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgid "Level"
+#~ msgstr "Niveau"
+
+#~ msgid "Downloads"
+#~ msgstr "Téléchargements"
+
+#~ msgid "Prices"
+#~ msgstr "Prix"
+
+#~ msgid "Upcoming Events"
+#~ msgstr "Événements à venir"
+
+#~ msgid "Recent Events"
+#~ msgstr "Événements récents"
+
+#~ msgid "Archive"
+#~ msgstr "Archive"
+
+#~ msgid "Locations"
+#~ msgstr "Lieux"
+
+#~ msgid "Tags"
+#~ msgstr "Mots clés"
+
+#~ msgid "Confirmation"
+#~ msgstr "Confirmation"
+
+#~ msgid "Rendez-vous in Paris"
+#~ msgstr "Rendez-vous à Paris"
+
+#~ msgid "On tour"
+#~ msgstr "En tournées"
+
+#~ msgid "Archives"
+#~ msgstr "Archives"
+
+#~ msgid "Also discover"
+#~ msgstr "À découvrir aussi"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Sorry, an error occurred."
+#~ msgstr "Une erreur s'est produite."
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "News"
+#~ msgstr "Actualité"
+
+#~ msgid "Subscribe to our newsletter"
+#~ msgstr "Inscription à la newsletter"
+
+#~ msgid "Follow us on"
+#~ msgstr "Suivez-nous sur"
+
+#~ msgid "Home"
+#~ msgstr "Accueil"
+
+#~ msgid "Opening times"
+#~ msgstr "Horaires d'ouverture"
+
+#~ msgid "Subway access"
+#~ msgstr "Accès en transports"
+
+#~ msgid "go to"
+#~ msgstr "Aller vers"
+
+#~ msgid "Previous page"
+#~ msgstr "Page précédente"
+
+#~ msgid "Next page"
+#~ msgstr "Page suivante"
+
+#~ msgid "Type something"
+#~ msgstr "Recherche"
+
+#~ msgid "Share on Facebook"
+#~ msgstr "Partagez sur Facebook"
+
+#~ msgid "Share on Twitter"
+#~ msgstr "Partagez sur Twitter"
+
+#~ msgid "Share by email"
+#~ msgstr "Partager par email"
+
+#~ msgid "Print this page"
+#~ msgstr "Imprimer cette page"
+
+#~ msgid "Add to"
+#~ msgstr "Ajouter à"
+
+#~ msgid "Magazine"
+#~ msgstr "Magazine"
+
+#~ msgid "Medias"
+#~ msgstr "Medias"
+
+#~ msgid "all articles"
+#~ msgstr "tous les articles"
+
+#~ msgid "from"
+#~ msgstr "du"
+
+#~ msgid "until"
+#~ msgstr "jusqu'au"
+
+#~ msgid "Apply"
+#~ msgstr "Candidatures"
+
+#~ msgid "Please come back later. There is no candidacy at the moment."
+#~ msgstr ""
+#~ "Merci de revenir plus tard. Il n'y a pas de candidature pour le moment."
+
 msgid "Application dates"
 msgstr "Candidatures"
 
-#: ircam_www_theme/templates/job/inc/job_offer_card.html:28
-#: ircam_www_theme/templates/job/offer/job_offer_detail.html:37
-msgid "Candidacies : "
-msgstr "Candidatures : "
-
-#: ircam_www_theme/templates/job/inc/job_response_form.html:4
-msgid "Send message"
-msgstr ""
-
-#: ircam_www_theme/templates/job/offer/job_offer_list.html:4
-#: ircam_www_theme/templates/job/offer/job_offer_list.html:11
-#: ircam_www_theme/templates/job/offer/job_offer_list.html:20
-msgid "Jobs"
-msgstr "Offres d'emplois et stages"
-
-#: ircam_www_theme/templates/job/offer/job_offer_list.html:33
-msgid "Please come back later. There is no job offer at the moment."
-msgstr ""
-"Merci de revenir plus tard. Il n'y a pas d'offre d'emploi pour le moment."
-
-#: ircam_www_theme/templates/magazine/article/article_detail.html:108
-#: ircam_www_theme/templates/media/audio/audio_detail.html:49
-#: ircam_www_theme/templates/media/video/video_detail.html:47
-msgid "Publish date"
-msgstr "Date de publication"
-
-#: ircam_www_theme/templates/magazine/article/includes/article_search.html:9
-msgid "Article"
-msgstr ""
-
-#: ircam_www_theme/templates/magazine/brief/includes/brief_card.html:6
-msgid "Brief !"
-msgstr "Brève !"
-
-#: ircam_www_theme/templates/magazine/topic/topic_detail.html:28
-msgid "Articles"
-msgstr "Articles"
-
-#: ircam_www_theme/templates/media/audio/audio_detail.html:4
-#: ircam_www_theme/templates/media/audio/audio_detail.html:32
-#: ircam_www_theme/templates/media/media/includes/media_card.html:17
-#: ircam_www_theme/templates/media/playlist/playlist_list.html:6
-#: ircam_www_theme/templates/media/playlist/playlist_list.html:11
-#: ircam_www_theme/templates/media/playlist/playlist_list.html:15
-#: ircam_www_theme/templates/media/playlist_detail.html:4
-#: ircam_www_theme/templates/media/playlist_detail.html:21
-#: ircam_www_theme/templates/media/video/video_detail.html:4
-#: ircam_www_theme/templates/media/video/video_detail.html:32
-msgid "Media"
-msgstr "Média"
-
-#: ircam_www_theme/templates/media/audio/inc/audio_search.html:20
-#: ircam_www_theme/templates/media/inc/playlist_search.html:39
-#: ircam_www_theme/templates/media/video/inc/video_search.html:20
-msgid "read more"
-msgstr "lire la suite"
-
-#: ircam_www_theme/templates/media/inc/playlist_shutter.html:35
-#: ircam_www_theme/templates/media/inc/playlist_shutter.html:36
-msgid "View all medias"
-msgstr "Voir tous les medias"
-
-#: ircam_www_theme/templates/media/playlist/playlist_list.html:21
-msgid "audio"
-msgstr "audio"
-
-#: ircam_www_theme/templates/media/playlist/playlist_list.html:26
-msgid "video"
-msgstr "vidéo"
-
-#: ircam_www_theme/templates/network/organization_list.html:4
-#: ircam_www_theme/templates/network/organization_list.html:13
-#: ircam_www_theme/templates/network/organization_list.html:23
-msgid "Network"
-msgstr "Réseaux"
-
-#: ircam_www_theme/templates/network/person/includes/person_card_circle.html:32
-msgid "resume"
-msgstr "résumé"
-
-#: ircam_www_theme/templates/network/person_activity_timesheet/person_activity_timesheet_create.html:4
-#: ircam_www_theme/templates/network/person_activity_timesheet/person_activity_timesheet_create.html:11
-#: ircam_www_theme/templates/network/person_activity_timesheet/person_activity_timesheet_list.html:4
-#: ircam_www_theme/templates/network/person_activity_timesheet/person_activity_timesheet_list.html:11
-msgid "Timesheet"
-msgstr ""
-
-#: ircam_www_theme/templates/network/person_dashboard.html:48
-#: ircam_www_theme/templates/network/person_detail.html:48
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:52
-#: ircam_www_theme/templates/pages/teampage.html:133
-msgid "Team"
-msgstr "Équipe"
-
-#: ircam_www_theme/templates/network/person_dashboard.html:99
-#: ircam_www_theme/templates/network/person_detail.html:99
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:106
-msgid "Links"
-msgstr "Liens"
-
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:37
-msgid "Activities"
-msgstr "Activités"
-
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:62
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:68
-msgid "Organization"
-msgstr ""
-
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:78
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:80
-#: ircam_www_theme/templates/network/person_detail_multiple_activities.html:82
-msgid "Period"
-msgstr "Période"
-
-#: ircam_www_theme/templates/pages/form.html:24
-msgid "Submit"
-msgstr "Soumettre"
-
-#: ircam_www_theme/templates/pages/menus/admin.html:42
-msgid "Add"
-msgstr "Ajouter"
-
-#: ircam_www_theme/templates/pages/menus/vous_etes.html:6
-#: ircam_www_theme/templates/pages/menus/vous_etes.html:15
-msgid "You are"
-msgstr "Vous êtes"
-
-#: ircam_www_theme/templates/pages/newsletter.html:4
-#: ircam_www_theme/templates/pages/newsletter.html:11
-#: ircam_www_theme/templates/pages/newsletter.html:20
-msgid "Newsletter"
-msgstr "Newsletter"
-
-#: ircam_www_theme/templates/pages/newsletter.html:25
-msgid ""
-"Sign up for our monthly newsletter to keep up to date with the institute's "
-"activities every month and be eligible to take advantage of special offers "
-"from our partners."
-msgstr ""
-
-#: ircam_www_theme/templates/pages/page/includes/page_search.html:23
-#: ircam_www_theme/templates/projects/project_demo_detail.html:39
-msgid "Project"
-msgstr "Projet"
-
-#: ircam_www_theme/templates/pages/page/includes/page_search.html:29
-msgid "Page"
-msgstr "Page"
-
-#: ircam_www_theme/templates/pages/teampage.html:87
-msgid "Research topics and related projects"
-msgstr "Domaines de recherche et projets associés"
-
-#: ircam_www_theme/templates/pages/teampage.html:98
-msgid "European and national projects"
-msgstr "Projets nationaux et européens"
-
-#: ircam_www_theme/templates/pages/teampage/includes/hal.html:9
-msgid "Publications"
-msgstr "Publications"
-
-#: ircam_www_theme/templates/projects/inc/project_block.html:25
-msgid "Please login to get links to the data"
-msgstr ""
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:130
-msgid "Project details"
-msgstr "Détails du projet"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:136
-msgid "Program"
-msgstr "Programme"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:147
-msgid "Program type"
-msgstr "Type de programme"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:157
-msgid "Beginning"
-msgstr "Début"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:166
-msgid "End"
-msgstr "Fin"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:175
-msgid "Status"
-msgstr "Statut"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:185
-msgid "Website"
-msgstr "Site internet"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:204
-msgid "Participants"
-msgstr "Participants"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:212
-msgid "Project lead team"
-msgstr "Équipe coordinatrice"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:219
-msgid "Project lead organization"
-msgstr "Organisation principale du projet"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:236
-msgid "Partners"
-msgstr "Partenaires"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:251
-msgid "teams"
-msgstr ""
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:286
-#: ircam_www_theme/templates/projects/project_demo_detail.html:22
-msgid "Demos"
-msgstr "Demos"
-
-#: ircam_www_theme/templates/projects/project/project_detail.html:308
-msgid "Blog Pages"
-msgstr ""
-
-#: ircam_www_theme/templates/projects/project_blogpage_detail.html:4
-#: ircam_www_theme/templates/projects/project_demo_detail.html:4
-msgid "Demo"
-msgstr "Demo"
-
-#: ircam_www_theme/templates/projects/project_blogpage_detail.html:58
-msgid "Please login to get more data."
-msgstr ""
-
-#: ircam_www_theme/templates/projects/project_demo_detail.html:40
-msgid "Authors"
-msgstr "Auteurs"
-
-#: ircam_www_theme/templates/search_results.html:5
-#: ircam_www_theme/templates/search_results.html:6
-#: ircam_www_theme/templates/search_results.html:15
-msgid "Search Results"
-msgstr "Résultats de recherche"
-
-#: ircam_www_theme/templates/search_results.html:69
-msgid "No results were found matching your query."
-msgstr "Aucun résultat n'a été trouvé pour votre recherche."
-
-#: ircam_www_theme/templates/shop/billing_shipping.html:17
-#, python-format
-msgid ""
-"\n"
-"If you have an existing account or would like to create one, please\n"
-"<a href=\"%(login_url)s?next=%(next)s\">log in</a> or\n"
-"<a href=\"%(signup_url)s?next=%(next)s\">sign up</a>.\n"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/billing_shipping.html:30
-#: ircam_www_theme/templates/shop/confirmation.html:10
-#: ircam_www_theme/templates/shop/includes/order_details.html:15
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:15
-msgid "Billing Details"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/billing_shipping.html:35
-msgid "Delivery Details"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:4
-#: ircam_www_theme/templates/shop/cart.html:5
-#: ircam_www_theme/templates/shop/cart.html:10
-msgid "Your Cart"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:26
-#: ircam_www_theme/templates/shop/includes/order_details.html:39
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:45
-msgid "Item"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:27
-#: ircam_www_theme/templates/shop/includes/order_details.html:40
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:44
-msgid "Unit Price"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:28
-#: ircam_www_theme/templates/shop/includes/order_details.html:41
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:43
-#: ircam_www_theme/templates/shop/order_history.html:20
-msgid "Qty"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:29
-#: ircam_www_theme/templates/shop/includes/order_details.html:42
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:42
-msgid "Price"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:30
-msgid "Remove?"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:64
-#: ircam_www_theme/templates/shop/includes/user_panel.html:10
-msgid "Return to Checkout"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:64
-#: ircam_www_theme/templates/shop/includes/user_panel.html:10
-msgid "Go to Checkout"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:66
-msgid "Update Cart"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:73
-msgid "Update"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:80
-msgid "You may also like:"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:94
-#: ircam_www_theme/templates/shop/product.html:101
-#: ircam_www_theme/templates/shop/product.html:151
-msgid "On sale:"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:98
-#: ircam_www_theme/templates/shop/product.html:155
-msgid "Coming soon"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/cart.html:111
-msgid "Your Cart is empty."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:4
-#: ircam_www_theme/templates/shop/checkout.html:5
-msgid "Checkout"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:5
-msgid "Step"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:5
-msgid "of"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:25
-#: ircam_www_theme/templates/shop/complete.html:58
-msgid "Complete"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:40
-msgid "Next"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:42
-msgid "Back"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:46
-msgid "Your cart is empty."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:47
-msgid ""
-"This may be due to your session timing out after a period of inactivity."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:48
-msgid "We apologize for the inconvenience."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:50
-#: ircam_www_theme/templates/shop/wishlist.html:44
-msgid "Continue Shopping"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/checkout.html:75
-msgid "Edit Cart"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:6
-#: ircam_www_theme/templates/shop/complete.html:52
-msgid "Order Complete"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:63
-msgid "Thank you for shopping with us, your order is complete."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:64
-msgid "We've sent you a receipt via email."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:65
-msgid "You can also view your invoice using one of the links below."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:70
-msgid "Download PDF invoice"
-msgstr "Télécharger la brochure"
-
-#: ircam_www_theme/templates/shop/complete.html:72
-msgid "View invoice in your browser"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/complete.html:73
-#: ircam_www_theme/templates/shop/order_history.html:38
-msgid "Re-send order email"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/confirmation.html:25
-#: ircam_www_theme/templates/shop/includes/order_details.html:16
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:16
-msgid "Shipping Details"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_details.html:7
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:8
-msgid "Order ID:"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_details.html:12
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:12
-msgid "Your Details"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_details.html:36
-#: ircam_www_theme/templates/shop/includes/order_details_rtl.html:36
-msgid "Items Ordered"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_totals.html:4
-#: ircam_www_theme/templates/shop/includes/order_totals.txt:2
-msgid "Sub total"
-msgstr "Sous-total"
-
-#: ircam_www_theme/templates/shop/includes/order_totals.html:12
-#: ircam_www_theme/templates/shop/includes/order_totals.txt:4
-msgid "Discount"
-msgstr "Réduction"
-
-#: ircam_www_theme/templates/shop/includes/order_totals.html:23
-#: ircam_www_theme/templates/shop/includes/order_totals.txt:6
-msgid "Shipping"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_totals.html:34
-#: ircam_www_theme/templates/shop/includes/order_totals.txt:8
-msgid "Tax"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/order_totals.html:39
-#: ircam_www_theme/templates/shop/includes/order_totals.txt:9
-msgid "Total"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/payment_fields.html:3
-msgid "Payment Details"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/payment_fields.html:8
-msgid "Card Expiry"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/user_panel.html:5
-#, python-format
-msgid "1 item"
-msgid_plural "%(cart_quantity)s items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ircam_www_theme/templates/shop/includes/user_panel.html:6
-msgid "in cart"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/includes/user_panel.html:16
-#, python-format
-msgid "Wishlist contains 1 item"
-msgid_plural " Wishlist contains %(wishlist_count)s items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ircam_www_theme/templates/shop/order_history.html:4
-#: ircam_www_theme/templates/shop/order_history.html:5
-#: ircam_www_theme/templates/shop/order_history.html:9
-msgid "Order History"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/order_history.html:19
-msgid "Date"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/order_history.html:21
-msgid "Paid"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/order_history.html:35
-msgid "Download PDF"
-msgstr "Télécharger PDF"
-
-#: ircam_www_theme/templates/shop/order_history.html:37
-msgid "View invoice"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/order_history.html:48
-msgid "You have not ordered anything from us yet."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/product.html:107
-msgid "The selected options are currently unavailable."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/product.html:120
-#: ircam_www_theme/templates/shop/wishlist.html:34
-msgid "Buy"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/product.html:122
-msgid "Save for later"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/product.html:127
-msgid "This product is currently unavailable."
-msgstr ""
-
-#: ircam_www_theme/templates/shop/product.html:137
-msgid "Related Products"
-msgstr "Produits liés"
-
-#: ircam_www_theme/templates/shop/product/includes/product_search.html:9
-msgid "Software"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/wishlist.html:4
-#: ircam_www_theme/templates/shop/wishlist.html:5
-#: ircam_www_theme/templates/shop/wishlist.html:9
-msgid "Your Wishlist"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/wishlist.html:35
-msgid "Remove"
-msgstr ""
-
-#: ircam_www_theme/templates/shop/wishlist.html:42
-msgid "Your wishlist is empty."
-msgstr ""
-
-#: ircam_www_theme/templates/styles.html:4
-#: ircam_www_theme/templates/styles.html:6
-#: ircam_www_theme/templates/styles.html:12
-msgid "Styles"
-msgstr ""
-
-#: ircam_www_theme/templates/twitter/tweets.html:7
-msgid "Recent Tweets"
-msgstr "Tweets récents"
+msgid "Application dates:"
+msgstr "Candidatures&nbsp;:"
+
+msgid "Candidacies"
+msgstr "Candidatures"
+
+msgid "Candidacies:"
+msgstr "Candidatures&nbsp;:"
+
+#~ msgid "Jobs"
+#~ msgstr "Offres d'emplois et stages"
+
+#~ msgid "Please come back later. There is no job offer at the moment."
+#~ msgstr ""
+#~ "Merci de revenir plus tard. Il n'y a pas d'offre d'emploi pour le moment."
+
+#~ msgid "Publish date"
+#~ msgstr "Date de publication"
+
+#~ msgid "Brief !"
+#~ msgstr "Brève !"
+
+#~ msgid "Articles"
+#~ msgstr "Articles"
+
+#~ msgid "Media"
+#~ msgstr "Média"
+
+#~ msgid "read more"
+#~ msgstr "lire la suite"
+
+#~ msgid "View all medias"
+#~ msgstr "Voir tous les medias"
+
+#~ msgid "audio"
+#~ msgstr "audio"
+
+#~ msgid "video"
+#~ msgstr "vidéo"
+
+#~ msgid "Network"
+#~ msgstr "Réseaux"
+
+#~ msgid "resume"
+#~ msgstr "résumé"
+
+#~ msgid "Team"
+#~ msgstr "Équipe"
+
+#~ msgid "Links"
+#~ msgstr "Liens"
+
+#~ msgid "Activities"
+#~ msgstr "Activités"
+
+#~ msgid "Period"
+#~ msgstr "Période"
+
+#~ msgid "Submit"
+#~ msgstr "Soumettre"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
+
+#~ msgid "You are"
+#~ msgstr "Vous êtes"
+
+#~ msgid "Newsletter"
+#~ msgstr "Newsletter"
+
+#~ msgid "Project"
+#~ msgstr "Projet"
+
+#~ msgid "Page"
+#~ msgstr "Page"
+
+#~ msgid "Research topics and related projects"
+#~ msgstr "Domaines de recherche et projets associés"
+
+#~ msgid "European and national projects"
+#~ msgstr "Projets nationaux et européens"
+
+#~ msgid "Publications"
+#~ msgstr "Publications"
+
+#~ msgid "Project details"
+#~ msgstr "Détails du projet"
+
+#~ msgid "Program"
+#~ msgstr "Programme"
+
+#~ msgid "Program type"
+#~ msgstr "Type de programme"
+
+#~ msgid "Beginning"
+#~ msgstr "Début"
+
+#~ msgid "End"
+#~ msgstr "Fin"
+
+#~ msgid "Status"
+#~ msgstr "Statut"
+
+#~ msgid "Website"
+#~ msgstr "Site internet"
+
+#~ msgid "Participants"
+#~ msgstr "Participants"
+
+#~ msgid "Project lead team"
+#~ msgstr "Équipe coordinatrice"
+
+#~ msgid "Project lead organization"
+#~ msgstr "Organisation principale du projet"
+
+#~ msgid "Partners"
+#~ msgstr "Partenaires"
+
+#~ msgid "Demos"
+#~ msgstr "Demos"
+
+#~ msgid "Demo"
+#~ msgstr "Demo"
+
+#~ msgid "Authors"
+#~ msgstr "Auteurs"
+
+#~ msgid "Search Results"
+#~ msgstr "Résultats de recherche"
+
+#~ msgid "No results were found matching your query."
+#~ msgstr "Aucun résultat n'a été trouvé pour votre recherche."
+
+#~ msgid "Download PDF invoice"
+#~ msgstr "Télécharger la brochure"
+
+#~ msgid "Sub total"
+#~ msgstr "Sous-total"
+
+#~ msgid "Discount"
+#~ msgstr "Réduction"
+
+#~ msgid "Download PDF"
+#~ msgstr "Télécharger PDF"
+
+#~ msgid "Related Products"
+#~ msgstr "Produits liés"
+
+#~ msgid "Recent Tweets"
+#~ msgstr "Tweets récents"
 
 #~ msgid "My Actions"
 #~ msgstr "Mes Actions"
