@@ -20,7 +20,7 @@
                 {% if content.date_from or content.date_to %}
                     {% editable content.date_from content.date_to %}
                     <strong>
-                    {% trans 'Application dates' %}&nbsp;:&nbsp;
+                    {% trans 'Application dates:' %}&nbsp;
                         {% if content.date_from and content.date_to %}
                             {% trans "from" %}&nbsp;{{ content.date_from|date:"DATE_FORMAT" }}&nbsp;{% trans "to" %}&nbsp;{{ content.date_to|date:"DATE_FORMAT" }}<br/>
                         {% elif content.date_from %}
