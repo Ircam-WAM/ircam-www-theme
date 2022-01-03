@@ -71,7 +71,11 @@
         {% if blocks and blocks.first %}
             <hr class="mt0" />
         {% endif %}
-        {% include "core/inc/block.html" %}
+        {% language "fr" %}
+        <div id="{{ blocks.first.title|slugify }}">
+        {% endlanguage %}
+            {% include "core/inc/block.html" %}
+        </div>
     {% endwith %}
 {% endblock %}
 
@@ -92,7 +96,9 @@
                     {% if projects %}
                         <div class="row">
                             <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2 white-bg" data-summary-content>
-                                <h2 class="dotted">{% trans "Research topics and related projects" %}</h2>
+                                <h2 class="dotted" id="domaines-de-recherche-et-projets-associes">
+                                    {% trans "Research topics and related projects" %}
+                                </h2>
                                     {% include 'projects/inc/project_list.html' %}
                             </div>
                         </div>
@@ -103,7 +109,7 @@
                 {% if leader_projects or partner_projects %}
                 <div class="row">
                     <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2 white-bg" data-summary-content>
-                        <h2 class="dotted">{% trans "European and national projects" %}</h2>
+                        <h2 class="dotted" id="projets-nationaux-et-europeens">{% trans "European and national projects" %}</h2>
                         {% with leader_projects as projects %}
                             {% include 'projects/inc/project_list.html' %}
                         {% endwith %}
@@ -138,7 +144,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-9 col-sm-push-3 col-lg-8 col-lg-push-2" data-summary-content>
-                        <h2 class="dotted">{% trans 'Team' %}</h2><br>
+                        <h2 class="dotted" id="equipe">{% trans 'Team' %}</h2><br>
                         {% for status in statuses %}
                             {% with page.teampage.team|get_team_persons:status as persons %}
                                 {% if persons %}
@@ -159,7 +165,7 @@
 
 {% block page_sub_content_3 %}
     {% with page.blocks.all|slice_ng:'-1' as blocks %}
-        {% if blocks and blocks.first %}
+        {% if blocks and blocks.last %}
             <hr class="mt0" />
         {% endif %}
         {% include "core/inc/block.html" %}
