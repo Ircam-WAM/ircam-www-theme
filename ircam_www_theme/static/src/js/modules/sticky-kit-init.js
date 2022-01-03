@@ -9,6 +9,8 @@ var StickyKitInit = function() {
 
 StickyKitInit.prototype.init = function() {
 
+    var topNavBarSpaceDefault = 100 //px
+
     var sidebar = document.getElementsByClassName("page__sidebar")
     var content = document.getElementsByClassName("sidebar_content")
     var position = "absolute"
@@ -48,6 +50,23 @@ StickyKitInit.prototype.init = function() {
         }, 30)
 
         function handleScroll(){
+
+            var diff = window.innerHeight - sidebar.clientHeight
+            var topNavBarSpace = topNavBarSpaceDefault
+            var scrollable = document.querySelector('.page__sidebar > div')
+            if(diff >= 5 && diff < topNavBarSpaceDefault){
+                topNavBarSpace = diff
+                scrollable.style.overflow = 'auto'
+                scrollable.style.maxHeight = "auto"
+            }else if(diff < 5){
+                topNavBarSpace = 5
+                scrollable.style.overflow = 'scroll'
+                scrollable.style.maxHeight = "calc(100vh - 5px)"
+            }else{
+                scrollable.style.overflow = 'auto'
+                scrollable.style.maxHeight = "auto"
+            }
+
             if(start_sidebar){
                 topPosition = (start_sidebar.getBoundingClientRect().top + window.scrollY) + 'px'
             }
@@ -68,18 +87,18 @@ StickyKitInit.prototype.init = function() {
                     end = content_rect.bottom
                 }
 
-                if(start < 100){
+                if(start < topNavBarSpace){
                     var dist = Math.round(end - sidebar_rect.bottom)
                     if(
                         (
                             Math.round(end - sidebar_rect.bottom) > 10
                         ) || (
-                            sidebar_rect.top > 100 && dist > -5 && dist < 5
+                            sidebar_rect.top > topNavBarSpace && dist > -5 && dist < 5
                         )
                     ){
                         position = "fixed"
                         sidebar.style.position = position
-                        sidebar.style.top = "100px"
+                        sidebar.style.top = topNavBarSpace + "px"
                     }else{
                         position = "absolute"
                         sidebar.style.position = position
@@ -124,6 +143,7 @@ StickyKitInit.prototype.init = function() {
                 sidebar.style.position = position
                 document.body.classList.remove("pushy-open-left")
             }
+            handleScroll()
         })
     }
 
