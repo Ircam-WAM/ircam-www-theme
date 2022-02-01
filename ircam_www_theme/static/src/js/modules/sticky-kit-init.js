@@ -41,6 +41,27 @@ StickyKitInit.prototype.init = function() {
                 }
             }
         }
+
+        var contentHeight = null
+        if (start_min !== null && end_max !== null) {
+            contentHeight = end_max - start_min
+        } else if (start_min !== null && end_max === null) {
+            contentHeight = content.getBoundingClientRect().bottom - start_min
+        } else if (end_max !== null) {
+            contentHeight = end_max - content.getBoundingClientRect().bottom
+        } else {
+            contentHeight = content.clientHeight
+        }
+        if (sidebar.clientHeight > contentHeight) {
+            var maxHeight = sidebar.clientHeight
+            if (start_min !== null) {
+                maxHeight += (start_min - content.getBoundingClientRect().top)
+            }
+            if (end_max !== null) {
+                maxHeight -= (content.getBoundingClientRect().bottom - end_max)
+            }
+            content.style.minHeight = maxHeight + 'px'
+        }
         // var ends = document.getElementsByClassName("navbar-end")
         // var end_sidebar = ends[ends.length - 1]  // last navbar-end div is used
         var sliders = document.getElementsByClassName("page__slider")
@@ -56,14 +77,17 @@ StickyKitInit.prototype.init = function() {
             var scrollable = document.querySelector('.page__sidebar > div')
             if(diff >= 5 && diff < topNavBarSpaceDefault){
                 topNavBarSpace = diff
-                scrollable.style.overflow = 'auto'
+                scrollable.style.overflowY = 'auto'
+                scrollable.style.overflowX = 'hidden'
                 scrollable.style.maxHeight = "auto"
             }else if(diff < 5){
                 topNavBarSpace = 5
-                scrollable.style.overflow = 'scroll'
+                scrollable.style.overflowY = 'scroll'
+                scrollable.style.overflowX = 'hidden'
                 scrollable.style.maxHeight = "calc(100vh - 5px)"
             }else{
-                scrollable.style.overflow = 'auto'
+                scrollable.style.overflowY = 'auto'
+                scrollable.style.overflowX = 'hidden'
                 scrollable.style.maxHeight = "auto"
             }
 

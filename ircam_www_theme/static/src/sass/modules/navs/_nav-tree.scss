@@ -68,7 +68,6 @@ $module: ".nav-tree";
 
     &--level-0 {
 
-        @include margin-bottom(2);
         box-shadow: 0 0 80px rgba(0, 0, 0, 0.15);
         border-left: 2px solid white;
         border-right: 2px solid white;
@@ -79,6 +78,10 @@ $module: ".nav-tree";
             border-top: 1px solid white;
         }
 
+    }
+
+    &--level-0:last-of-type {
+        @include margin-bottom(2);
     }
 
     &__item {

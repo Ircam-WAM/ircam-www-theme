@@ -50,6 +50,10 @@ static/js
 static/css
 static/img
 static/vendors
+ircam_www_theme/static/js
+ircam_www_theme/static/css
+ircam_www_theme/static/img
+ircam_www_theme/static/vendors
 
 ### SublimeText ###
 ###################

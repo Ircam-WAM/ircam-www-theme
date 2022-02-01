@@ -45,7 +45,7 @@
 {% endblock %}
 
 {% block page_content %}
-
+    <div class="navbar-start"></div>
     {% for object in objects %}
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
             {% with app_label=object|app_label_short classname=object|classname|lower  %}
@@ -55,6 +55,7 @@
             {% endwith %}
         </div>
     {% endfor %}
+    <div class="navbar-end"></div>
 
     {% pagination_for objects %}
 {% endblock %}
