@@ -34,7 +34,7 @@
     <div class="job-line-box__desc">
         {% if job_offer.expiry_date %}
             {% editable job_offer.expiry_date %}
-                <strong>{% trans 'Candidacies : ' %}{% trans "until" %}&nbsp;{{ job_offer.expiry_date|date:"DATE_FORMAT" }}</strong>
+                <strong>{% trans 'Candidacies:' %} {% trans "until" %}&nbsp;{{ job_offer.expiry_date|date:"DATE_FORMAT" }}</strong>
             {% endeditable %}
         {% endif %}
     </div>
