@@ -1,0 +1,45 @@
+{% extends "pages/dashboardservice/includes/dashboard_card.html" %}
+{% load i18n pages_tags mezzanine_tags media_tags organization_tags %}
+
+{% block metatitle %}
+    {{ block.super }}
+{% endblock %}
+
+{% block title %}
+    {{ block.super }}
+{% endblock %}
+
+{% block url %}
+    {{ block.super }}
+{% endblock %}
+
+{% block target %}
+    {{ block.super }}
+{% endblock %}
+
+{% block image %}
+    {{ block.super }}
+{% endblock %}
+
+{% block tags %}
+    <div class="dashboardservice-box__tags">
+        <div class="tag tag--small tag--category">
+            {{ object.name }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+{% endblock %}
+
+{% block subtitle %}
+    {% comment %}
+        {{ object.publish_date|date:"DATE_FORMAT" }}
+    {% endcomment %}
+    {% for category in object.categories.all %}
+        {% comment %}{% if forloop.first %} | {% endif %}{% endcomment %}
+        {% if not forloop.first %}, {% endif %}
+        <strong>{{ category }}</strong>
+    {% endfor %}
+{% endblock %}

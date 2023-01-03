@@ -354,3 +354,6 @@ msgstr "Candidatures&nbsp;:"
 
 #~ msgid "Persons"
 #~ msgstr "Personnes"
+
+#~ msgid "Dashboard"
+#~ msgstr "Tableau de bord"

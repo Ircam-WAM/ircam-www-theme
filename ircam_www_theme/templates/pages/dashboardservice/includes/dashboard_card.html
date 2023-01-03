@@ -1,0 +1,56 @@
+{% load i18n pages_tags mezzanine_tags media_tags organization_tags %}
+
+<a class="dashboardservice-box" href="
+    {% block url %}
+        {{ object.url }}
+    {% endblock %}"
+    {% block target %}
+        {{ object.url }} target="_blank"
+    {% endblock %}
+    title="{% block metatitle %}{{ object.title }}{% endblock %}">
+    <div class="dashboardservice-box__header">
+        {% block image %}
+            <!-- img src="/media/{{object.image}}" / -->
+            {% with object.image as images %}
+                {% if images %}
+                    <figure class="dashboardservice-box__image">
+                        <img src="{{ MEDIA_URL }}{% thumbnail images 400 280 %}" data-original="" class="lazyload" title="{{ object.url }}"/>
+                    </figure>
+                {% else %}
+                    <figure class="dashboardservice-box__image">
+                        {% if object.department %}
+                            <div class="dashboardservice-box__placeholder {{object.department.name|slugify}}"></div>
+                        {% else %}
+                            <div class="dashboardservice-box__placeholder"></div>
+                        {% endif %}
+                    </figure>
+                {% endif %}
+            {% endwith %}
+        {% endblock %}
+
+        {% block tags %}
+        {% endblock %}
+
+        {% block btn %}
+        {% endblock %}
+
+    </div>
+
+    <div class="dashboardservice-box__content tal">
+        <h3 class="dashboardservice-box__title">
+            {% block title %}
+                {{ object.title }}
+            {% endblock %}
+        </h3>
+        <div class="dashboardservice-box__subtitle">
+            {% block subtitle %}
+                {{ object.sub_title }}
+            {% endblock %}
+        </div>
+        <div class="dashboardservice-box__desc">
+            {% block content %}
+                {{ object.description|richtext_filters|safe|truncatechars_html:200 }}
+            {% endblock %}
+        </div>
+    </div>
+</a>
